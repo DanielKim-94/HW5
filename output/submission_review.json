@@ -27,9 +27,10 @@
     "backend/prompts/inventory.md": "present",
     "backend/prompts/accounting.md": "present",
     "backend/prompts/facilities.md": "present",
-    "backend/prompts/customer_service.md": "present"
+    "backend/prompts/customer_service.md": "present",
+    "output/github_url.txt": "present"
   },
-  "github_url": "pending user repository selection and publication",
+  "github_url": "https://github.com/DanielKim-94/HW5",
   "original_database_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
   "original_and_working_databases_preserved": true,
   "changes": [
@@ -59,5 +60,5 @@
     "secret_scan": "No known local secret values or common GitHub/OpenAI key signatures found in staged files",
     "database_and_audit_unchanged_by_preparation": true
   },
-  "publication": "Not performed: awaiting user repository URL"
+  "publication": "Repository selected; pending push and remote verification"
 }

@@ -312,3 +312,12 @@ Once the project is ready, help me publish it to the public GitHub repository I 
 
 Preparation checks and documentation fixes are recorded in output/submission_review.json. Publishing and github_url.txt remain pending the user-specified repository; no URL or successful push is invented.
 
+
+
+### Problem 11 follow-up: Publish the selected repository
+
+```text
+Please publish the committed project to [https://github.com/DanielKim-94/HW5](https://github.com/DanielKim-94/HW5) and save this URL in `output/github_url.txt`. Include that file in the push, verify the required files and both databases are uploaded, and confirm that no secrets are included.
+```
+
+The earlier preparation lacked a repository destination. This follow-up authorizes publication to the specified public repository and verification of remote artifacts.
