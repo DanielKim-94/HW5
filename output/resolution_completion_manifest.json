@@ -1,0 +1,160 @@
+{
+  "batch_id": "resolution-20261009T065959Z",
+  "kind": "Human-confirmed completion workflows; no reset or new AI run",
+  "before_snapshot": "output\\diagnostics\\20261009T065959Z_before_completion",
+  "preserved_audit_entries": 1344,
+  "original_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
+  "resolved_screenshots": {
+    "101": {
+      "path": "output/screenshots/resolution-20261009T065959Z_ticket_101_resolved.png",
+      "ticket_id": 101,
+      "captured_utc": "2026-10-09T07:06:14.931Z",
+      "ticket": {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "resolved",
+        "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      "cash": {
+        "account": {
+          "name": "checking",
+          "balance": 160,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-09-05",
+        "currency": null
+      },
+      "completion_batch": "resolution-20261009T065959Z",
+      "instructor_confirmed": false,
+      "simulation_disclosure": [
+        "Paid invoice501 covers ticket quantity1 only",
+        "Calendar days from recorded payment date2026-08-31",
+        "SIMULATED receipt/fulfillment only; no physical delivery asserted"
+      ],
+      "screenshot_sha256": "40f0b05bfd8d9e0a9608aad30988a40e9effef57cefe9a070ab3adab679215d4",
+      "dashboard_url": "http://localhost:5174/",
+      "api_confirmed_resolved": true,
+      "mocked": false
+    },
+    "102": {
+      "path": "output/screenshots/resolution-20261009T065959Z_ticket_102_resolved.png",
+      "ticket_id": 102,
+      "captured_utc": "2026-10-09T07:02:58.945Z",
+      "ticket": {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      "cash": {
+        "account": {
+          "name": "checking",
+          "balance": 160,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-09-05",
+        "currency": null
+      },
+      "completion_batch": "resolution-20261009T065959Z",
+      "instructor_confirmed": false,
+      "simulation_disclosure": null,
+      "screenshot_sha256": "e11b967c4f7b2f35a9e6fbfb79e707902d57dd4db8a3e7fe553a85938a3e2d86",
+      "dashboard_url": "http://localhost:5174/",
+      "api_confirmed_resolved": true,
+      "mocked": false
+    },
+    "103": {
+      "path": "output/screenshots/resolution-20261009T065959Z_ticket_103_resolved.png",
+      "ticket_id": 103,
+      "captured_utc": "2026-10-09T07:06:24.652Z",
+      "ticket": {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.\nHuman business decision: price 58.00 retained; unsent conditional quote prepared. Resolution criterion not applied.\nHuman-authorized pricing decision recorded as unsent conditional quote; no fulfillment, customer acceptance or revenue claimed.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      },
+      "cash": {
+        "account": {
+          "name": "checking",
+          "balance": 160,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-09-05",
+        "currency": null
+      },
+      "completion_batch": "resolution-20261009T065959Z",
+      "instructor_confirmed": false,
+      "simulation_disclosure": null,
+      "screenshot_sha256": "470c44e5a8df4cd348607e96c0b186a7705a6dd0837309bdbb5a6c4bc8916776",
+      "dashboard_url": "http://localhost:5174/",
+      "api_confirmed_resolved": true,
+      "mocked": false
+    }
+  },
+  "instructor_confirmed": false,
+  "simulation_assumptions": [
+    "Paid invoice501 covers ticket quantity1 only",
+    "Calendar days from recorded payment date2026-08-31",
+    "SIMULATED receipt/fulfillment only; no physical delivery asserted"
+  ],
+  "simulation_date": "2026-09-05",
+  "status": "database_resolution_verified",
+  "ticket_statuses": {
+    "101": "resolved",
+    "102": "resolved",
+    "103": "resolved"
+  },
+  "checking": 160,
+  "completion_audit_sequences": [
+    1345,
+    1346,
+    1347,
+    1348,
+    1349,
+    1350
+  ],
+  "current_audit_entries": 1350,
+  "verification": {
+    "all_resolved": true,
+    "checking": 160,
+    "no_additional_payment": true,
+    "original_unchanged": true,
+    "audit_prefix_preserved": true,
+    "quote_unsent": true,
+    "hoodie_inventory_unchanged": true,
+    "instructor_confirmed": false
+  },
+  "evidence_validity": {
+    "historical": true,
+    "invalidated_as_current_by_reset_sequences": [
+      1352,
+      1454,
+      1472
+    ],
+    "current_manifest": "recovered_completion_manifest.json"
+  }
+}

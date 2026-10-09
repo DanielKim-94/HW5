@@ -1,0 +1,16 @@
+{
+  "backend_tests": 26,
+  "browser_tests": 8,
+  "production_build": "passed",
+  "test_databases": "disposable; no live agent runs or payment execution",
+  "live_api_verification": "post_fix_api_verification.json",
+  "preserved_evidence": "diagnostics/20261009T051535Z",
+  "current_ticket_statuses": [
+    "open",
+    "open",
+    "open"
+  ],
+  "checking_balance": 3400,
+  "reset_during_investigation": false,
+  "resolved_screenshots": []
+}

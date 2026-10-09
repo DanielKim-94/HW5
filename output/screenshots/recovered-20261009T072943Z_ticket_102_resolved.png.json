@@ -1,0 +1,42 @@
+{
+  "path": "output/screenshots/recovered-20261009T072943Z_ticket_102_resolved.png",
+  "ticket_id": 102,
+  "captured_utc": "2026-10-09T07:36:33.687Z",
+  "ticket": {
+    "id": 102,
+    "type": "rent_notice",
+    "requester": "Elm City Properties",
+    "subject": "Rent due",
+    "sku": null,
+    "size": null,
+    "qty": null,
+    "lease_id": 1,
+    "invoice_id": null,
+    "status": "resolved",
+    "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+    "created_at": "2026-08-31T11:05:00-04:00"
+  },
+  "cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-09-05",
+    "currency": null
+  },
+  "completion_batch": "recovered-20261009T072943Z",
+  "instructor_confirmed": false,
+  "simulation_disclosure": null,
+  "screenshot_sha256": "ff56d413bd73cc31f88ccc25b858868ebd3da229270774c395b01999715603d2",
+  "dashboard_url": "http://localhost:5174/",
+  "visible_browser": true,
+  "visible_current_outcome": "Current outcome: Resolved: database confirmed\nApproved rent payment recorded.\n\nNext action: None. Keep the evidence; do not repeat payments or completion actions.",
+  "running_backend_identity": {
+    "working_database_path": "C:\\Users\\1dank\\OneDrive\\바탕 화면\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+    "mcp_pid": 49800
+  },
+  "database_reset_sequence": 1472,
+  "api_confirmed_resolved": true,
+  "mocked": false
+}

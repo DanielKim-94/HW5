@@ -1,0 +1,63 @@
+{
+  "basis": "User-provided eleven-problem requirements and supplied data.zip; no separate instructor rubric file found in project. Full rubric compliance cannot be independently certified.",
+  "required_files": {
+    "AI_prompts.md": "present",
+    "README.md": "present",
+    "requirements.txt": "present",
+    ".env.example": "present",
+    ".gitignore": "present",
+    ".mcp.json": "present",
+    "data/campus_customs.db": "present",
+    "data/campus_customs_new.db": "present",
+    "backend/main.py": "present",
+    "backend/models.py": "present",
+    "mcp_server/server.py": "present",
+    "mcp_server/READme.md": "present",
+    "frontend/package.json": "present",
+    "frontend/package-lock.json": "present",
+    "output/harness.md": "present",
+    "output/mcp_smoke.json": "present",
+    "output/audit_trail.json": "present",
+    "output/desk_tickets.html": "present",
+    "output/design.md": "present",
+    "output/resolved_tickets.md": "present",
+    "output/payment_reconciliation.json": "present",
+    "output/recovered_completion_manifest.json": "present",
+    "backend/prompts/boss.md": "present",
+    "backend/prompts/inventory.md": "present",
+    "backend/prompts/accounting.md": "present",
+    "backend/prompts/facilities.md": "present",
+    "backend/prompts/customer_service.md": "present"
+  },
+  "github_url": "pending user repository selection and publication",
+  "original_database_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
+  "original_and_working_databases_preserved": true,
+  "changes": [
+    "Root README, requirements, env template, portable MCP config",
+    "Project-root env loading with parent fallback",
+    "Expanded secret and generated-file exclusions",
+    "Updated stale setup/limit documentation"
+  ],
+  "public_exclusions": [
+    "Real env files",
+    "Human tokens",
+    "Diagnostic copies/logs/process files",
+    "venv/node_modules/build outputs"
+  ],
+  "completion_limit": "101 simulated and 103 pricing-only criteria user-approved, not instructor-confirmed",
+  "validation": {
+    "backend_tests": 32,
+    "browser_tests": 10,
+    "production_build": "passed",
+    "report_links": "all local targets present",
+    "current_ticket_statuses": {
+      "101": "resolved",
+      "102": "resolved",
+      "103": "resolved"
+    },
+    "checking": 160,
+    "secret_scan": "No known local secret values or common GitHub/OpenAI key signatures found in staged files",
+    "database_and_audit_unchanged_by_preparation": true
+  },
+  "publication": "Not performed: awaiting user repository URL"
+}

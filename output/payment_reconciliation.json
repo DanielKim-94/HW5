@@ -1,0 +1,69 @@
+{
+  "baseline": 3400,
+  "payments": [
+    {
+      "id": 1,
+      "kind": "invoice",
+      "ref_id": 501,
+      "amount": 840.0,
+      "account": "checking",
+      "paid_at": "2026-08-31",
+      "approved_by": "Dawon Kim"
+    },
+    {
+      "id": 2,
+      "kind": "rent",
+      "ref_id": 1,
+      "amount": 2400.0,
+      "account": "checking",
+      "paid_at": "2026-08-31",
+      "approved_by": "Dawon Kim"
+    }
+  ],
+  "current_approvals": {
+    "payments": [
+      {
+        "id": "2f17de15-4914-4250-ba92-5ab5446ceb1d",
+        "ticket_id": 101,
+        "kind": "invoice",
+        "ref_id": 501,
+        "amount": "840.0",
+        "account": "checking",
+        "due_date": "2026-08-28",
+        "requested_on": "2026-08-31",
+        "status": "executed",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-08-31",
+        "payment_id": 1,
+        "reason": "Human requested preparation for review only; no payment authorized."
+      },
+      {
+        "id": "886023a5-6a0c-4ff5-a913-db46b295dec3",
+        "ticket_id": 102,
+        "kind": "rent",
+        "ref_id": 1,
+        "amount": "2400.0",
+        "account": "checking",
+        "due_date": "2026-09-02",
+        "requested_on": "2026-08-31",
+        "status": "executed",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-08-31",
+        "payment_id": 2,
+        "reason": "Human requested preparation for review only; no payment authorized."
+      }
+    ],
+    "purchases": []
+  },
+  "remaining": 160,
+  "calculation": "3400 - 840 - 2400 = 160",
+  "approval_evidence_audit_sequences": [
+    1475,
+    1476,
+    1483,
+    1484
+  ],
+  "approval_evidence_limit": "Authenticated human approval endpoint and named database actor; identity of the physical browser operator is not independently verified.",
+  "recovery_payments_repeated": false,
+  "previous_reconciliation_archived": "output\\diagnostics\\20261009T071737Z_discrepancy\\payment_reconciliation.json"
+}

@@ -1,0 +1,35 @@
+{
+  "path": "output/screenshots/resolution-20261009T065959Z_ticket_103_resolved.png",
+  "ticket_id": 103,
+  "captured_utc": "2026-10-09T07:06:24.652Z",
+  "ticket": {
+    "id": 103,
+    "type": "price_override",
+    "requester": "Yale AI Club",
+    "subject": "Bulk hoodie discount",
+    "sku": "CC-HOOD-NAVY",
+    "size": "M",
+    "qty": 20,
+    "lease_id": null,
+    "invoice_id": null,
+    "status": "resolved",
+    "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.\nHuman business decision: price 58.00 retained; unsent conditional quote prepared. Resolution criterion not applied.\nHuman-authorized pricing decision recorded as unsent conditional quote; no fulfillment, customer acceptance or revenue claimed.",
+    "created_at": "2026-08-31T16:55:00-04:00"
+  },
+  "cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-09-05",
+    "currency": null
+  },
+  "completion_batch": "resolution-20261009T065959Z",
+  "instructor_confirmed": false,
+  "simulation_disclosure": null,
+  "screenshot_sha256": "470c44e5a8df4cd348607e96c0b186a7705a6dd0837309bdbb5a6c4bc8916776",
+  "dashboard_url": "http://localhost:5174/",
+  "api_confirmed_resolved": true,
+  "mocked": false
+}

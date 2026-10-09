@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Customs · Ticket plans</title>
+  <style>
+    :root { color-scheme: light; --blue:#00356b; --ink:#172b45; --muted:#586b80; --line:#dce5ee; --paper:#fff; --wash:#f2f6fa; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--wash); color:var(--ink); font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    header { background:var(--blue); color:white; padding:42px max(24px,calc((100vw - 1100px)/2)); }
+    .eyebrow { margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(28px,4vw,42px); line-height:1.2; letter-spacing:-.03em; }
+    header p:last-child { margin:12px 0 0; color:#d6e7f7; }
+    main { max-width:1150px; margin:0 auto; padding:28px 24px 56px; }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+    .badge { border:1px solid var(--line); border-radius:999px; padding:5px 13px; background:white; font-size:13px; color:var(--muted); }
+    nav { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:24px; }
+    nav button { cursor:pointer; border:1px solid var(--line); background:white; border-radius:10px; padding:11px 18px; color:var(--blue); font:inherit; font-weight:650; }
+    nav button[aria-selected="true"] { background:var(--blue); color:white; border-color:var(--blue); }
+    button:hover { box-shadow:0 3px 12px #00356b15; }
+    button:focus-visible { outline:3px solid #639ee2; outline-offset:3px; }
+    [hidden] { display:none !important; }
+    .ticket-heading { margin-bottom:22px; }
+    h2 { font-size:26px; letter-spacing:-.025em; line-height:1.3; margin:0 0 7px; }
+    .ticket-heading p { margin:0; color:var(--muted); }
+    .columns { display:grid; grid-template-columns:minmax(0,2fr) minmax(220px,1fr); gap:22px; align-items:start; }
+    .card { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:26px; box-shadow:0 5px 22px #00356b05; }
+    h3 { margin:0 0 20px; color:var(--blue); font-size:20px; }
+    h4 { margin:25px 0 8px; font-size:15px; color:var(--blue); }
+    p { margin:10px 0; }
+    ul,ol { margin:10px 0; padding-left:24px; }
+    li { margin:8px 0; }
+    .facts { padding:14px 17px; background:#f3f7fc; border-radius:10px; margin-bottom:20px; }
+    .facts p { margin:4px 0; }
+    .tools { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0; }
+    code { font:12px/1.5 ui-monospace,Consolas,monospace; background:#edf3fa; border:1px solid #dbe7f3; color:var(--blue); padding:5px 8px; border-radius:6px; overflow-wrap:anywhere; }
+    .stop { border-left:3px solid var(--blue); padding:2px 0 2px 14px; margin-top:22px; }
+    .actual { min-height:220px; }
+    .actual-body { min-height:130px; }
+    .note { color:var(--muted); font-size:14px; }
+    .placeholder { min-height:240px; }
+    details { margin-top:24px; background:white; border:1px solid var(--line); border-radius:12px; padding:18px 22px; }
+    summary { cursor:pointer; color:var(--blue); font-weight:650; }
+    details p { font-size:14px; color:var(--muted); }
+    footer { margin-top:24px; font-size:13px; color:var(--muted); }
+    @media(max-width:760px) { .columns { grid-template-columns:1fr; } .card { padding:21px; } header { padding:32px 24px; } nav button { flex:1 1 auto; } }
+    @media print { header { color:var(--blue); background:white; padding:20px; } main { max-width:none; padding:20px; } nav { display:none; } [role="tabpanel"][hidden] { display:block !important; } [role="tabpanel"] { break-before:page; } .columns { grid-template-columns:1fr; } .card { box-shadow:none; break-inside:avoid; } details { display:none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Campus Customs / Homework 5 / Problem 6</p>
+    <h1>The shop desk</h1>
+    <p>Agreed ticket plans, ready to compare with future agent runs.</p>
+  </header>
+  <main>
+    <div class="meta">
+      <span class="badge">Shop date · August 31, 2026</span>
+      <span class="badge">Plan reviewed and agreed</span>
+      <span class="badge">All three tickets open at planning time</span>
+    </div>
+    <nav role="tablist" aria-label="Desk sections">
+      <button id="tab-101" role="tab" aria-selected="true" aria-controls="panel-101" tabindex="0">101 · Tee</button>
+      <button id="tab-102" role="tab" aria-selected="false" aria-controls="panel-102" tabindex="-1">102 · Rent</button>
+      <button id="tab-103" role="tab" aria-selected="false" aria-controls="panel-103" tabindex="-1">103 · Hoodies</button>
+      <button id="tab-cash" role="tab" aria-selected="false" aria-controls="panel-cash" tabindex="-1">Cash</button>
+      <button id="tab-reflection" role="tab" aria-selected="false" aria-controls="panel-reflection" tabindex="-1">Reflection</button>
+    </nav>
+
+    <section id="panel-101" role="tabpanel" aria-labelledby="tab-101" tabindex="0">
+      <div class="ticket-heading"><h2>101 · One size-S Bulldog tee</h2><p>Tauhid Zaman · Customer order</p></div>
+      <div class="columns">
+        <article class="card expected"><h3>Expected</h3>
+          <div class="facts"><p><strong>Request:</strong> 1 CC-TEE-WHITE, size S. Recorded stock: <strong>0</strong>.</p><p><strong>Pricing:</strong> unit cost 8; list price 28.</p><p><strong>Supply blocker:</strong> invoice 501, amount 840, open, due August 28. Vendor: Bulldog Print Co; lead time 5 days.</p></div>
+          <h4>First contact: Inventory</h4>
+          <p>Boss should establish exact-size availability first. A price or payment decision cannot by itself make the tee available.</p>
+          <h4>Expected delegations</h4>
+          <ol>
+            <li><strong>Boss → Inventory:</strong> check the requested stock row and linked reprint supplier.</li>
+            <li><strong>Inventory → Accounting:</strong> investigate invoice 501 and the cash implications. The vendor cannot ship while its invoice remains open and unpaid.</li>
+            <li><strong>Accounting → human approval:</strong> present a precise payment request. Await approval before execution; recheck funds and the obligation when executing.</li>
+            <li>After Accounting returns, <strong>Inventory → Customer Service:</strong> prepare an unsent explanation of the shortage and uncertain delivery timing.</li>
+            <li><strong>Inventory returns to Boss:</strong> summarize evidence, approval status, and remaining fulfillment blockers.</li>
+          </ol>
+          <h4>Likely MCP tools</h4>
+          <div class="tools"><code>get_ticket_context</code><code>get_customer_order_context</code><code>get_vendor_shipping_status</code><code>request_payment_approval</code><code>get_payment_approval</code><code>execute_approved_payment</code><code>save_message_draft</code></div>
+          <p>After an approved payment, recheck shipping eligibility. <code>plan_vendor_shipment</code> may save a draft using the recorded lead time. <code>fulfill_customer_order</code> is appropriate only when actual exact-size stock exists.</p>
+          <h4>Reasoning and uncertainties</h4>
+          <p>The invoice is three calendar days past due relative to the shop date. Its description mentions the product and size but does not establish a reprint quantity. The recorded 5-day lead time is not a confirmed delivery date; calendar/business-day semantics remain unclear.</p>
+          <p>Accounting should consider the competing rent obligation. The current ticket context cannot expose that lease without switching tickets; the proposed shared cash tool below is needed before execution.</p>
+          <div class="stop"><strong>Expected stopping point:</strong> awaiting human approval or blocked on confirmed replenishment. Invoice payment alone does not resolve the order.</div>
+        </article>
+        <article class="card actual"><h3>Actual</h3><div class="actual-body" data-ticket="101"><p>Resolved: SIMULATION ONLY. User-confirmed classroom receipt and fulfillment recorded on September5,2026. Paid invoice501 is assumed to cover one requested tee; five calendar days start at August31 recorded payment. No physical delivery claimed and no additional payment. Instructor has not confirmed these criteria.</p><p>Current API and visible dashboard confirm Resolved after recovery of already committed records. Earlier evidence became historical after resets 1352/1454/1472. No payment or simulation was repeated.</p><a href="screenshots/recovered-20261009T072943Z_ticket_101_resolved.png">Actual resolved-ticket dashboard screenshot</a><img src="screenshots/recovered-20261009T072943Z_ticket_101_resolved.png" alt="Actual resolved ticket 101 dashboard" style="max-width:100%;height:auto;margin-top:12px"></div></article>
+      </div>
+    </section>
+
+    <section id="panel-102" role="tabpanel" aria-labelledby="tab-102" tabindex="0" hidden>
+      <div class="ticket-heading"><h2>102 · Shop rent</h2><p>Elm City Properties · Rent notice</p></div>
+      <div class="columns">
+        <article class="card expected"><h3>Expected</h3>
+          <div class="facts"><p><strong>Lease:</strong> 1, Chapel Street shop. Monthly rent: <strong>2400</strong>.</p><p><strong>Due:</strong> September 2, 2026 — two days after the shop date.</p><p><strong>Cash context:</strong> checking 3400; competing open invoice 840; no recorded payments.</p></div>
+          <h4>First contact: Facilities</h4>
+          <p>Facilities should verify the lease and landlord notice before Accounting evaluates how to pay the obligation.</p>
+          <h4>Expected delegations</h4>
+          <ol>
+            <li><strong>Boss → Facilities:</strong> verify the actual lease, monthly rent, and next due date against the shop date.</li>
+            <li><strong>Facilities → Accounting:</strong> check the account, competing invoice, and payment history.</li>
+            <li><strong>Accounting → human approval:</strong> request approval for the exact rent obligation. A pending request is not a payment.</li>
+            <li>After Accounting returns, <strong>Facilities → Customer Service</strong>, if useful: prepare an unsent landlord response matching the actual payment state.</li>
+            <li><strong>Facilities returns to Boss:</strong> report the verified result or outstanding approval/blocker.</li>
+          </ol>
+          <h4>Likely MCP tools</h4>
+          <div class="tools"><code>get_ticket_context</code><code>get_rent_payment_context</code><code>request_payment_approval</code><code>get_payment_approval</code><code>execute_approved_payment</code><code>save_message_draft</code></div>
+          <h4>Reasoning and verification</h4>
+          <p>The notice agrees with the stored lease date. Accounting should consider both known obligations without treating sufficient cash as permission to spend. Every payment requires human approval.</p>
+          <p>Approved execution atomically records the payment, reduces cash, advances the lease due date, and resolves the rent ticket. The implemented monthly recurrence convention advances September 2 to <strong>October 2</strong>; that convention was not specified in the original database.</p>
+          <div class="stop"><strong>Expected stopping point:</strong> awaiting approval. After approved execution, verify the payment, account, lease, and ticket records before reporting resolution.</div>
+        </article>
+        <article class="card actual"><h3>Actual</h3><div class="actual-body" data-ticket="102"><p>Resolved: recorded human-approved rent payment2 for2400. Lease next_due October2; historical payment date August31 remains unchanged. Fresh dashboard evidence captured after recovery; no new payment.</p><p>Current API and visible dashboard confirm Resolved after recovery of already committed records. Earlier evidence became historical after resets 1352/1454/1472. No payment or simulation was repeated.</p><a href="screenshots/recovered-20261009T072943Z_ticket_102_resolved.png">Actual resolved-ticket dashboard screenshot</a><img src="screenshots/recovered-20261009T072943Z_ticket_102_resolved.png" alt="Actual resolved ticket 102 dashboard" style="max-width:100%;height:auto;margin-top:12px"></div></article>
+      </div>
+    </section>
+
+    <section id="panel-103" role="tabpanel" aria-labelledby="tab-103" tabindex="0" hidden>
+      <div class="ticket-heading"><h2>103 · Discount for 20 medium hoodies</h2><p>Yale AI Club · Price override</p></div>
+      <div class="columns">
+        <article class="card expected"><h3>Expected</h3>
+          <div class="facts"><p><strong>Request:</strong> 20 CC-HOOD-NAVY, size M. Stock: <strong>8</strong>; shortage: <strong>12</strong>.</p><p><strong>Pricing:</strong> unit cost 22; list price 58. For 20 units: recorded cost 440; list-price total 1160.</p><p><strong>Unknown:</strong> requested discount, deadline, discount policy, and confirmed hoodie supplier.</p></div>
+          <h4>First contact: Inventory</h4>
+          <p>Check the stock constraint before offering a price. A discount cannot make the full requested quantity available, and other sizes are not automatic substitutes.</p>
+          <h4>Expected delegations</h4>
+          <ol>
+            <li><strong>Boss → Inventory:</strong> establish exact-size availability and missing supplier information.</li>
+            <li><strong>Inventory → Accounting:</strong> assess recorded cost/list price and transparent totals, without inventing a discount policy.</li>
+            <li>After Accounting returns, <strong>Inventory → Customer Service:</strong> draft questions about the desired discount, deadline, partial fulfillment, and acceptable alternative sizes.</li>
+            <li><strong>Inventory returns to Boss:</strong> Boss reviews the findings and any justified quote proposal. No discount is presented as approved.</li>
+          </ol>
+          <h4>Likely MCP tools</h4>
+          <div class="tools"><code>get_ticket_context</code><code>get_bulk_pricing_context</code><code>save_message_draft</code><code>save_quote_draft</code></div>
+          <p><code>save_quote_draft</code> is conditional on a specific justified proposal. Vendor status/planning tools become relevant only after supplier suitability is established; the database does not identify a hoodie supplier.</p>
+          <h4>Reasoning and uncertainties</h4>
+          <p>The monetary totals are arithmetic using recorded rates, not an approved quote or all-in cost. Below-cost drafts are rejected by the implementation, but a price above cost is not automatically authorized. Drafts neither add revenue nor reserve inventory.</p>
+          <p>The existing fulfillment tool supports customer-order tickets, not this price-override ticket. No supplier, delivery, customer acceptance, or accepted discount should be fabricated.</p>
+          <div class="stop"><strong>Expected stopping point:</strong> blocked by stock and missing requirements/policy, with unsent drafts ready for review.</div>
+        </article>
+        <article class="card actual"><h3>Actual</h3><div class="actual-body" data-ticket="103"><p>Resolved: pricing request only. User retained58 per hoodie; unsent conditional quote for20 totals1160 and explicitly states only8 currently in stock; fulfillment of all20 is not guaranteed. No customer acceptance, hoodie fulfillment, stock reservation or revenue. Instructor has not confirmed this completion rule.</p><p>Current API and visible dashboard confirm Resolved after recovery of already committed records. Earlier evidence became historical after resets 1352/1454/1472. No payment or simulation was repeated.</p><a href="screenshots/recovered-20261009T072943Z_ticket_103_resolved.png">Actual resolved-ticket dashboard screenshot</a><img src="screenshots/recovered-20261009T072943Z_ticket_103_resolved.png" alt="Actual resolved ticket 103 dashboard" style="max-width:100%;height:auto;margin-top:12px"></div></article>
+      </div>
+    </section>
+
+    <section id="panel-cash" role="tabpanel" aria-labelledby="tab-cash" tabindex="0" hidden><article class="card"><h2>Cash: current verified ledger</h2><p>3,400 - invoice501 payment840 - lease1 rent payment2,400 = <strong>160.00</strong>. Both recorded payments have named human approval. No additional payment, purchase or revenue was recorded in this completion batch.</p><p>Shop simulation date September5,2026; checking/payment record date August31 remains unchanged. Currency unspecified in database.</p><p>101 receipt/fulfillment is explicitly simulated;103 closure is pricing-only with an unsent conditional quote. Completion criteria are user-approved, not instructor-confirmed.</p></article></section>
+    <section id="panel-reflection" role="tabpanel" aria-labelledby="tab-reflection" tabindex="0" hidden>
+      <article class="card"><h2>Reflection</h2>
+        <p class="note">My observations below come from using this app. The ticket outcomes and delegation examples come from the preserved database, audit trail, and screenshots. The additional use cases are AI-assisted suggestions, not tested results.</p>
+        <h3>What I learned from the three tickets</h3>
+        <p>Ticket 103 showed the most useful analysis. The agents identified that only 8 of the requested 20 medium hoodies were available, checked the recorded cost of 22 and price of 58, and identified pricing and supplier uncertainties. However, their analysis did not independently resolve the request. I chose to retain 58 per hoodie and approved an unsent conditional quote: 20 hoodies would total 1,160, but fulfillment of all 20 was not guaranteed. Closing the pricing request did not record customer acceptance, hoodie fulfillment, or revenue.</p>
+        <p>Ticket 101 required the most intervention from me. Inventory identified zero size-S tees, and the linked invoice required a human-approved payment of 840. Paying that invoice removed a payment-related supplier blocker but did not prove stock receipt or complete the customer order. I separately approved the classroom assumptions and the simulated receipt and fulfillment of one tee. The simulation used five calendar days from the recorded August 31 payment, giving September 5, 2026 as the simulated receipt and fulfillment date. The assumption that the paid invoice covered one tee was explicitly accepted for the classroom exercise; it was not independently proved by the original invoice. No physical delivery was claimed and no additional payment was made.</p>
+        <p>Ticket 102 had the clearest financial completion criterion. Facilities and Accounting checked the rent context, but an early run incorrectly treated the future due date as a reason not to prepare approval. After the workflow was corrected, my approval allowed the recorded rent payment of 2,400. The database then showed the rent ticket resolved and the lease's next due date as October 2. The agents could investigate and prepare a request; they could not approve their own payment.</p>
+        <p><strong>Cash reconciliation: 3,400 &minus; 840 &minus; 2,400 = 160.</strong> These were the two current recorded payments, with named human approval evidence. Ticket 103 did not add revenue, and ticket 101's simulation did not add another debit. Earlier payment records from reset generations are historical evidence, not additional charges in the current ledger.</p>
+        <p><strong>Completion limits:</strong> the criteria for ticket 101's simulated fulfillment and ticket 103's pricing-only closure were approved by me, not confirmed by the instructor. A database status of Resolved reflects these recorded criteria; it does not establish actual delivery or acceptance of the quote.</p>
+        <h3>Expected and actual delegation</h3>
+        <p>For ticket 101, I expected Boss to contact Inventory first, followed by Inventory handing the invoice question to Accounting and the customer explanation to Customer Service. One preserved run instead shows Boss contacting Inventory, Accounting, and Customer Service directly. The specialists contributed stock and invoice analysis and an unsent customer draft, but that run did not prepare the payment request or resolve the order.</p>
+        <p>For ticket 102, I expected Boss to contact Facilities and Facilities to hand the financial check to Accounting. The documented run shows Boss contacting both directly. Its report said it was awaiting a human, but no approval ID existed. This was a failure to prepare the request, not proof that an existing request was simply hidden.</p>
+        <p>For ticket 103, I expected Inventory first, then Accounting and Customer Service. Actual attempts included Boss contacting Accounting, Accounting contacting Inventory, and Boss contacting Inventory again. Another attempt started with Inventory but still repeated the Inventory check through Accounting. These examples show departures from my plan; they do not establish that every planned handoff occurred in every run.</p>
+        <p>My observation is that the five roles clarified responsibilities, but repeated delegation and stock checks felt unnecessary. Sharing findings across agents would make the process more efficient. The implementation later added reuse of specialist findings within a run, but that fix should not be mistaken for evidence that earlier attempts were efficient.</p>
+        <h3>Difficulties and trust in the dashboard</h3>
+        <p>I learned that ?Run completed? does not mean a ticket is resolved. Some attempts failed; others ended with a draft or a blocker while the ticket stayed open. One ticket-103 attempt exceeded the 40,000-token limit and reported 43,265 tokens after repeated investigation. A limit checked after a response can be exceeded before the run stops.</p>
+        <p>Missing approval displays had different explanations. Some runs never created a request, and an earlier pending invoice request was deleted by a database reset. Preparation, display, human approval, payment execution, and continuation therefore needed separate checks. The dashboard also kept an old paid-invoice error visible when another ticket was selected, which made the failure harder to understand.</p>
+        <p>Later resets cleared completed receipt, quote, and resolution records. Earlier screenshots were genuine but became historical evidence, and the completion report became stale. Recovery restored the previously authorized records without repeating payments or simulation operations. These problems taught me to check dashboard messages against database and audit records, and to distinguish current results from earlier attempts.</p>
+        <p>The agents contributed investigation, financial and stock analysis, and drafts. The coding assistant's implementation fixes improved preparation, approval controls, continuation, reuse of findings, and status displays. My business decisions supplied the simulation assumptions and the pricing-only completion rule. Passing implementation tests was useful, but actual database and dashboard evidence was needed to support ticket resolution.</p>
+        <h3>Where one agent with tools would be simpler</h3>
+        <p><strong>AI-assisted assessment:</strong> a single agent could probably handle ticket 102 by reading <code>get_rent_payment_context</code>, preparing <code>request_payment_approval</code>, and stopping for a human decision. A fixed sequence of checks would avoid unnecessary handoffs. The stock and price reads for ticket 103 could also be combined using <code>get_bulk_pricing_context</code>. For ticket 101, one agent could check <code>get_customer_order_context</code> and vendor status, then prepare the known invoice request. Having five agents did not remove the need for human approval or justify inventing receipt evidence. Separate roles remain helpful when their expertise produces distinct work rather than repeated database reads.</p>
+        <h3>Three additional problems the current team could help with</h3>
+        <p class="note">These are proposed uses within the implemented ticket types and available records, not additional completed runs.</p>
+        <ol>
+          <li><strong>Review another recorded supplier invoice:</strong> Accounting can check cash and shipping restrictions, prepare a payment request, and stop for human approval. Vendor-status and payment tools can verify the result afterward.</li>
+          <li><strong>Answer an exact-size availability inquiry:</strong> Inventory can use the customer-order context to identify a shortage or available stock, and Customer Service can use <code>save_message_draft</code> to prepare an unsent response.</li>
+          <li><strong>Prepare a conditional bulk-price response:</strong> Accounting and Inventory can check recorded price, cost, and stock; quote and resolution-review tools can record a supported human decision without claiming acceptance or guaranteed supply.</li>
+        </ol>
+        <h3>Three problems the current team cannot complete</h3>
+        <ol>
+          <li><strong>Verify a real delivery:</strong> the simulation tools cannot prove a supplier shipped or a package arrived. Real receipt would need supplier or carrier evidence, a receiving-record tool, and a human receiving process or logistics role.</li>
+          <li><strong>Process a return and refund:</strong> the app lacks sales, returns, refund eligibility, and payment-processor records. It would need those tools and an explicit human-approved refund workflow; current cash-out safeguards alone are insufficient.</li>
+          <li><strong>Secure the missing 12 hoodies from a supplier:</strong> there is no confirmed hoodie supplier mapping or live commitment. Supplier catalog, quotation, and authorized communication tools, plus a procurement role, would be needed. Current checking of 160 is also less than 12 times the recorded unit cost of 22, or 264; that arithmetic is not a supplier quote, and the app cannot invent revenue to cover it.</li>
+        </ol>
+        <h3>What I would improve first</h3>
+        <p>I would first improve the approval and status workflow, clearly separate current results from historical attempts, and add safeguards against accidental resets. I would keep plan approval, simulated receipt, fulfillment, and ticket resolution distinct. My experience showed that useful agent reasoning is only one part of a reliable app: durable records, clear human decisions, and accurate status reporting matter just as much.</p>
+        <p class="note">Evidence: <a href="completed_open_investigation.md">completed-but-open investigation</a>, <a href="post_payment_investigation.md">post-payment and token-limit investigation</a>, <a href="discrepancy_investigation.md">reset and recovery investigation</a>, and <a href="payment_reconciliation.json">current cash reconciliation</a>.</p>
+      </article>
+    </section>
+
+    <details open>
+      <summary>Shared checks and one tool gap before execution</summary>
+      <p>Keep each delegation on its current ticket and avoid active-ancestor cycles. Specialist findings return through the existing call chain; a return is not a new delegation to Boss. Human approval is separate from agent delegation.</p>
+      <p><strong>Proposed addition:</strong> <code>get_cash_obligations(ticket_id)</code>, reading desk, cash_accounts, invoices, leases, and payments. This is a planned tool, not an implemented one. Ticket 102 already exposes its competing invoice; ticket 101 cannot currently inspect the rent obligation without switching tickets.</p>
+      <p>The known rent and invoice together leave 160 from the recorded 3400 balance. This is arithmetic, not approval to pay either obligation; currency is unspecified.</p>
+      <p>All shop facts and changes must use MCP. Cash only goes out. Messages remain unsent drafts. Paying an invoice does not create stock; confirmed receipt/restock tooling remains a gap.</p>
+    </details>
+    <footer>Planning snapshot from data/campus_customs_new.db · Actual sections use recorded evidence · This page opens locally and makes no network requests.</footer>
+    <noscript><p>Enable JavaScript to switch tabs. Printing displays every section.</p></noscript>
+  </main>
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    function activate(tab, focus = false) {
+      tabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(tab));
+      tab.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = tabs.length - 1;
+        if (next !== undefined) { event.preventDefault(); activate(tabs[next], true); }
+      });
+    });
+  </script>
+</body>
+</html>

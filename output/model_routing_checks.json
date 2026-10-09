@@ -1,0 +1,107 @@
+[
+  {
+    "checked_utc": "2026-10-09T04:26:28.957821+00:00",
+    "requested_model": "gpt-6-luna",
+    "endpoint": "https://api.portkey.ai/v1/chat/completions",
+    "request_body": {
+      "model": "gpt-6-luna",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Routing diagnostic only. Call record_probe with marker verified. No shop data or operational action."
+        }
+      ],
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "record_probe",
+            "description": "Return the diagnostic marker only; no operation will be executed.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "marker"
+              ],
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        }
+      ],
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "record_probe"
+        }
+      },
+      "max_completion_tokens": 256,
+      "reasoning_effort": "none"
+    },
+    "request_headers": {
+      "Authorization": "[redacted]",
+      "x-portkey-api-key": "[redacted]",
+      "x-portkey-trace-id": "hw5-model-check-e5563ca4-21d6-4e4f-a719-de0b65681626"
+    },
+    "shop_data_sent": false,
+    "tools_executed": false,
+    "http_status": 200,
+    "response_headers": {
+      "x-portkey-cache-status": "MISS",
+      "x-portkey-last-used-option-index": "config.targets[2]",
+      "x-portkey-provider": "azure-openai",
+      "x-portkey-retry-attempt-count": "0",
+      "x-portkey-trace-id": "hw5-model-check-e5563ca4-21d6-4e4f-a719-de0b65681626",
+      "x-request-id": "04c4ba6b-c321-4649-badd-8a49b79ec2c1"
+    },
+    "response_metadata": {
+      "id": "chatcmpl-EWwTeN9pSP8ymioGmmDxq8D245Log",
+      "model": "gpt-6-luna-2026-09-22",
+      "created": 1791519990,
+      "usage": {
+        "completion_tokens": 17,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 3,
+          "engine_ttft_ms": 82,
+          "engine_ttlt_ms": 144,
+          "pre_inference_ms": 112,
+          "service_tbt_ms": 3,
+          "service_ttft_ms": 661,
+          "service_ttlt_ms": 716,
+          "user_visible_ttft_ms": 549
+        },
+        "prompt_tokens": 148,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 165
+      },
+      "system_fingerprint": null
+    },
+    "response_tool_calls": [
+      {
+        "function": {
+          "arguments": "{\"marker\":\"verified\"}",
+          "name": "record_probe"
+        },
+        "id": "call_2GFC6pu2CZKj46TYdarZ4p4J",
+        "type": "function"
+      }
+    ],
+    "model_matches": true,
+    "function_call_received": true,
+    "verified": true
+  }
+]

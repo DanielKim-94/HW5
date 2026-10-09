@@ -1,0 +1,6 @@
+pydantic-ai-slim[openai]==1.107.7
+fastmcp==3.4.8
+python-dotenv>=1.2,<2
+filelock==4.0.12
+fastapi==0.143.0
+uvicorn==0.54.0

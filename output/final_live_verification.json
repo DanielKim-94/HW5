@@ -1,0 +1,236 @@
+{
+  "/health": {
+    "status": "ok",
+    "active_run_id": null,
+    "runtime": {
+      "working_database_path": "C:\\Users\\1dank\\OneDrive\\\ubc14\ud0d5 \ud654\uba74\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+      "mcp_pid": 49800
+    }
+  },
+  "/tickets": {
+    "tickets": [
+      {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "resolved",
+        "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.\nHuman business decision: price 58.00 retained; unsent conditional quote prepared. Resolution criterion not applied.\nHuman-authorized pricing decision recorded as unsent conditional quote; no fulfillment, customer acceptance or revenue claimed.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      }
+    ],
+    "business_date": "2026-09-05"
+  },
+  "/cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160.0,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-09-05",
+    "currency": null
+  },
+  "/tickets/101": {
+    "ticket": {
+      "id": 101,
+      "type": "customer_order",
+      "requester": "Tauhid Zaman",
+      "subject": "Bulldog tee",
+      "sku": "CC-TEE-WHITE",
+      "size": "S",
+      "qty": 1,
+      "lease_id": null,
+      "invoice_id": 501,
+      "status": "resolved",
+      "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+      "created_at": "2026-08-31T09:15:00-04:00"
+    },
+    "desk": [
+      {
+        "date_today": "2026-09-05",
+        "notes": "\nSIMULATION clock advance: User explicitly confirms one-tee classroom simulated receipt/fulfillment; five calendar days from shop payment date2026-08-31. Shared date affects all ticket evaluations; historical payments and rent next_due unchanged. Not instructor-confirmed; no physical delivery."
+      }
+    ],
+    "business_date": "2026-09-05",
+    "operational_schema_initialized": true,
+    "payment_approvals": [
+      {
+        "id": "2f17de15-4914-4250-ba92-5ab5446ceb1d",
+        "ticket_id": 101,
+        "kind": "invoice",
+        "ref_id": 501,
+        "amount": "840.0",
+        "account": "checking",
+        "due_date": "2026-08-28",
+        "requested_on": "2026-08-31",
+        "status": "executed",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-08-31",
+        "payment_id": 1,
+        "reason": "Human requested preparation for review only; no payment authorized."
+      }
+    ],
+    "message_drafts": [],
+    "quote_drafts": [],
+    "fulfillments": [
+      {
+        "ticket_id": 101,
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "fulfilled_on": "2026-09-05"
+      }
+    ],
+    "shipment_plans": [],
+    "purchase_approvals": [],
+    "purchases": [],
+    "resolution_reviews": [
+      {
+        "id": "1f86a639-1215-4367-adde-e3c4220effac",
+        "ticket_id": 101,
+        "kind": "simulated_restock",
+        "payload": "{\"simulation\": true, \"qty\": 1, \"sku\": \"CC-TEE-WHITE\", \"size\": \"S\", \"vendor_id\": 1, \"lead_days\": 5, \"earliest_arrival\": \"2026-09-05\", \"source\": \"Rush reprint CC-TEE-WHITE S\", \"assumptions\": [\"Paid reprint covers only requested ticket quantity; invoice has no line quantity\", \"Calendar days from recorded payment date\", \"Classroom simulation only; no physical delivery claimed\"], \"rationale\": \"User accepts classroom assumption: paid invoice 501 covers only the ticket-requested one tee, no additional purchase/payment; calendar days from recorded payment date 2026-08-31. Prepare separate simulated receipt confirmation only; no actual delivery or instructor confirmation.\"}",
+        "status": "executed",
+        "requested_on": "2026-08-31",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-09-05"
+      }
+    ]
+  },
+  "/tickets/102": {
+    "ticket": {
+      "id": 102,
+      "type": "rent_notice",
+      "requester": "Elm City Properties",
+      "subject": "Rent due",
+      "sku": null,
+      "size": null,
+      "qty": null,
+      "lease_id": 1,
+      "invoice_id": null,
+      "status": "resolved",
+      "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+      "created_at": "2026-08-31T11:05:00-04:00"
+    },
+    "desk": [
+      {
+        "date_today": "2026-09-05",
+        "notes": "\nSIMULATION clock advance: User explicitly confirms one-tee classroom simulated receipt/fulfillment; five calendar days from shop payment date2026-08-31. Shared date affects all ticket evaluations; historical payments and rent next_due unchanged. Not instructor-confirmed; no physical delivery."
+      }
+    ],
+    "business_date": "2026-09-05",
+    "operational_schema_initialized": true,
+    "payment_approvals": [
+      {
+        "id": "886023a5-6a0c-4ff5-a913-db46b295dec3",
+        "ticket_id": 102,
+        "kind": "rent",
+        "ref_id": 1,
+        "amount": "2400.0",
+        "account": "checking",
+        "due_date": "2026-09-02",
+        "requested_on": "2026-08-31",
+        "status": "executed",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-08-31",
+        "payment_id": 2,
+        "reason": "Human requested preparation for review only; no payment authorized."
+      }
+    ],
+    "message_drafts": [],
+    "quote_drafts": [],
+    "fulfillments": [],
+    "shipment_plans": [],
+    "purchase_approvals": [],
+    "purchases": [],
+    "resolution_reviews": []
+  },
+  "/tickets/103": {
+    "ticket": {
+      "id": 103,
+      "type": "price_override",
+      "requester": "Yale AI Club",
+      "subject": "Bulk hoodie discount",
+      "sku": "CC-HOOD-NAVY",
+      "size": "M",
+      "qty": 20,
+      "lease_id": null,
+      "invoice_id": null,
+      "status": "resolved",
+      "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.\nHuman business decision: price 58.00 retained; unsent conditional quote prepared. Resolution criterion not applied.\nHuman-authorized pricing decision recorded as unsent conditional quote; no fulfillment, customer acceptance or revenue claimed.",
+      "created_at": "2026-08-31T16:55:00-04:00"
+    },
+    "desk": [
+      {
+        "date_today": "2026-09-05",
+        "notes": "\nSIMULATION clock advance: User explicitly confirms one-tee classroom simulated receipt/fulfillment; five calendar days from shop payment date2026-08-31. Shared date affects all ticket evaluations; historical payments and rent next_due unchanged. Not instructor-confirmed; no physical delivery."
+      }
+    ],
+    "business_date": "2026-09-05",
+    "operational_schema_initialized": true,
+    "payment_approvals": [],
+    "message_drafts": [],
+    "quote_drafts": [
+      {
+        "ticket_id": 103,
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "unit_price": "58.00",
+        "unit_cost_snapshot": "22.0",
+        "rationale": "UNSENT CONDITIONAL QUOTE: 20 hoodies at 58.00 per hoodie; proposed total 1160.00. Currency unspecified in database. Existing list price retained where applicable. Only 8 of the requested 20 CC-HOOD-NAVY size M units are currently in stock. Fulfillment of all 20 is not guaranteed. No inventory reserved; no replenishment/supplier commitment or customer acceptance implied. No message sent and no revenue recorded.",
+        "created_on": "2026-09-05",
+        "status": "draft"
+      }
+    ],
+    "fulfillments": [],
+    "shipment_plans": [],
+    "purchase_approvals": [],
+    "purchases": [],
+    "resolution_reviews": [
+      {
+        "id": "52956ce6-9361-426e-916e-9e98ecc7f951",
+        "ticket_id": 103,
+        "kind": "pricing_decision",
+        "payload": "{\"simulation\": false, \"sku\": \"CC-HOOD-NAVY\", \"size\": \"M\", \"qty\": 20, \"unit_price\": \"58.00\", \"unit_cost\": \"22.0\", \"list_price\": \"58.0\", \"rationale\": \"Explicit user business decision: retain existing price 58 per hoodie; prepare an unsent conditional quote for 20, disclose only 8 currently in stock and no guarantee of fulfilling all 20. No instructor-confirmed policy or price-resolution criterion asserted.\", \"completion_rule\": \"Resolve price decision only by saving a human-authorized unsent conditional quote; no fulfillment or acceptance claimed\", \"supply_caveat\": \"No stock reservation, replenishment, supplier commitment, customer acceptance or revenue. Fulfillment requires separate confirmation.\", \"decision_scope\": \"Human pricing decision and draft only; resolution criterion not applied\", \"available_snapshot\": 8, \"requested_qty\": 20, \"conditional_quote\": \"UNSENT CONDITIONAL QUOTE: 20 hoodies at 58.00 per hoodie; proposed total 1160.00. Currency unspecified in database. Existing list price retained where applicable. Only 8 of the requested 20 CC-HOOD-NAVY size M units are currently in stock. Fulfillment of all 20 is not guaranteed. No inventory reserved; no replenishment/supplier commitment or customer acceptance implied. No message sent and no revenue recorded.\"}",
+        "status": "executed",
+        "requested_on": "2026-08-31",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-09-05"
+      }
+    ]
+  }
+}

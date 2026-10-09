@@ -1,0 +1,136 @@
+{
+  "live_ai_calls": false,
+  "shop_payments_executed": false,
+  "integration_tests_passed": 15,
+  "http_checks": {
+    "/health": {
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "active_run_id": null
+      }
+    },
+    "/tickets": {
+      "status": 200,
+      "body": {
+        "tickets": [
+          {
+            "id": 101,
+            "type": "customer_order",
+            "requester": "Tauhid Zaman",
+            "subject": "Bulldog tee",
+            "sku": "CC-TEE-WHITE",
+            "size": "S",
+            "qty": 1,
+            "lease_id": null,
+            "invoice_id": 501,
+            "status": "open",
+            "notes": "Needs a tee in size S.",
+            "created_at": "2026-08-31T09:15:00-04:00"
+          },
+          {
+            "id": 102,
+            "type": "rent_notice",
+            "requester": "Elm City Properties",
+            "subject": "Rent due",
+            "sku": null,
+            "size": null,
+            "qty": null,
+            "lease_id": 1,
+            "invoice_id": null,
+            "status": "open",
+            "notes": "Email: shop rent due in 2 days.",
+            "created_at": "2026-08-31T11:05:00-04:00"
+          },
+          {
+            "id": 103,
+            "type": "price_override",
+            "requester": "Yale AI Club",
+            "subject": "Bulk hoodie discount",
+            "sku": "CC-HOOD-NAVY",
+            "size": "M",
+            "qty": 20,
+            "lease_id": null,
+            "invoice_id": null,
+            "status": "open",
+            "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+            "created_at": "2026-08-31T16:55:00-04:00"
+          }
+        ],
+        "business_date": "2026-08-31"
+      }
+    },
+    "/cash": {
+      "status": 200,
+      "body": {
+        "account": {
+          "name": "checking",
+          "balance": 3400.0,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-08-31",
+        "currency": null
+      }
+    },
+    "/approvals": {
+      "status": 200,
+      "body": {
+        "payments": [],
+        "purchases": []
+      }
+    },
+    "/activity?limit=2": {
+      "status": 200,
+      "body": {
+        "entries": [
+          {
+            "timestamp_utc": "2026-10-09T02:48:23.924024+00:00",
+            "run_id": "316d68c4-17c7-4ed5-b0a2-22a11e42cdf9",
+            "ticket": null,
+            "agent": "Human",
+            "event": "schema_initialized",
+            "delegation": null,
+            "tool_calls": [],
+            "results": {
+              "initialized": true,
+              "tables": [
+                "payment_approvals",
+                "message_drafts",
+                "quote_drafts",
+                "fulfillments",
+                "shipment_plans"
+              ]
+            },
+            "approval_requests": [],
+            "sequence": 1
+          },
+          {
+            "timestamp_utc": "2026-10-09T03:18:15.915521+00:00",
+            "run_id": "626c0cdd-6098-4119-8e1c-740dab228665",
+            "ticket": null,
+            "agent": "Human",
+            "event": "schema_initialized",
+            "delegation": null,
+            "tool_calls": [],
+            "results": {
+              "initialized": true,
+              "tables": [
+                "payment_approvals",
+                "message_drafts",
+                "quote_drafts",
+                "fulfillments",
+                "shipment_plans",
+                "purchase_approvals",
+                "purchases"
+              ]
+            },
+            "approval_requests": [],
+            "sequence": 2
+          }
+        ],
+        "latest_sequence": 2,
+        "next_after_sequence": 2
+      }
+    }
+  }
+}

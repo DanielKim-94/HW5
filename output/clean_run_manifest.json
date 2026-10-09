@@ -1,0 +1,194 @@
+{
+  "batch_id": "clean-1db1d5aa-f3a3-4710-9ace-ffd718ca9d0b",
+  "started_utc": "2026-10-09T04:14:45.238981+00:00",
+  "diagnostic_snapshot": "output/diagnostics/20261009T040935Z",
+  "preserved_audit_count": 191,
+  "preserved_audit_prefix_sha256": "708d8c7ec8b7e0f2e241031abdcb15a9e6b103875f3a6df29cc8d064c645f2f6",
+  "reset_result": {
+    "reset": true,
+    "original_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
+    "operational_requests_cleared": true,
+    "audit_preserved": true,
+    "extensions_reinitialized": true
+  },
+  "runs": [
+    {
+      "run_id": "0e62cad3-f4cc-42c5-b8b5-e9bd83ffc7a7",
+      "ticket": 101,
+      "task": "Clean batch clean-1db1d5aa-f3a3-4710-9ace-ffd718ca9d0b. Work only ticket 101. Have Inventory verify the exact size-S stock and linked supplier, then hand off invoice 501 to Accounting to check cash obligations and prepare the recorded invoice payment for human review. Stop at the pending approval. Do not invent receipt or increase stock, and do not claim fulfillment or resolution. Use the database shop date and leave messages as drafts.",
+      "queued": {
+        "run_id": "0e62cad3-f4cc-42c5-b8b5-e9bd83ffc7a7",
+        "ticket_id": 101,
+        "agent": "Boss",
+        "status": "queued",
+        "created_at_utc": "2026-10-09T04:31:33.226569+00:00"
+      },
+      "latest": {
+        "run_id": "0e62cad3-f4cc-42c5-b8b5-e9bd83ffc7a7",
+        "ticket_id": 101,
+        "agent": "Boss",
+        "status": "completed",
+        "created_at_utc": "2026-10-09T04:31:33.226569+00:00",
+        "result": {
+          "ticket_id": 101,
+          "agent": "Boss",
+          "summary": "Paused for human approval of invoice request 1a09a940-c9d3-4763-b089-4e9a9274870f for 840.0. No payment executed.",
+          "status": "awaiting_human",
+          "evidence": [
+            "Durable MCP approval request recorded by Accounting"
+          ],
+          "uncertainties": [],
+          "approval_request_ids": [
+            "1a09a940-c9d3-4763-b089-4e9a9274870f"
+          ],
+          "next_actions": [
+            "Human must review the request in the dashboard. Resume this ticket after the decision."
+          ]
+        },
+        "finished_at_utc": "2026-10-09T04:31:51.224770+00:00"
+      }
+    }
+  ],
+  "resolved_screenshots": {},
+  "initial_tickets": {
+    "tickets": [
+      {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "open",
+        "notes": "Needs a tee in size S.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Email: shop rent due in 2 days.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      }
+    ],
+    "business_date": "2026-08-31"
+  },
+  "initial_cash": {
+    "account": {
+      "name": "checking",
+      "balance": 3400.0,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-08-31",
+    "currency": null
+  },
+  "initial_approvals": {
+    "payments": [],
+    "purchases": []
+  },
+  "current_tickets": {
+    "tickets": [
+      {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "open",
+        "notes": "Needs a tee in size S.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Email: shop rent due in 2 days.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      }
+    ],
+    "business_date": "2026-08-31"
+  },
+  "current_cash": {
+    "account": {
+      "name": "checking",
+      "balance": 3400.0,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-08-31",
+    "currency": null
+  },
+  "current_approvals": {
+    "payments": [
+      {
+        "id": "1a09a940-c9d3-4763-b089-4e9a9274870f",
+        "ticket_id": 101,
+        "kind": "invoice",
+        "ref_id": 501,
+        "amount": "840.0",
+        "account": "checking",
+        "due_date": "2026-08-28",
+        "requested_on": "2026-08-31",
+        "status": "pending",
+        "approved_by": null,
+        "decision_on": null,
+        "payment_id": null,
+        "reason": "Request human review of payment using the stored invoice amount only."
+      }
+    ],
+    "purchases": []
+  },
+  "audit_prefix_verified": true,
+  "database_reset_after_run": true,
+  "invalidated_by_reset_sequence": 295,
+  "current_evidence": "completed_open_run_evidence.json",
+  "historical_only": true
+}

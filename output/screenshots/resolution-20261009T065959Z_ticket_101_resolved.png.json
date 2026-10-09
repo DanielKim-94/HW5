@@ -1,0 +1,39 @@
+{
+  "path": "output/screenshots/resolution-20261009T065959Z_ticket_101_resolved.png",
+  "ticket_id": 101,
+  "captured_utc": "2026-10-09T07:06:14.931Z",
+  "ticket": {
+    "id": 101,
+    "type": "customer_order",
+    "requester": "Tauhid Zaman",
+    "subject": "Bulldog tee",
+    "sku": "CC-TEE-WHITE",
+    "size": "S",
+    "qty": 1,
+    "lease_id": null,
+    "invoice_id": 501,
+    "status": "resolved",
+    "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+    "created_at": "2026-08-31T09:15:00-04:00"
+  },
+  "cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-09-05",
+    "currency": null
+  },
+  "completion_batch": "resolution-20261009T065959Z",
+  "instructor_confirmed": false,
+  "simulation_disclosure": [
+    "Paid invoice501 covers ticket quantity1 only",
+    "Calendar days from recorded payment date2026-08-31",
+    "SIMULATED receipt/fulfillment only; no physical delivery asserted"
+  ],
+  "screenshot_sha256": "40f0b05bfd8d9e0a9608aad30988a40e9effef57cefe9a070ab3adab679215d4",
+  "dashboard_url": "http://localhost:5174/",
+  "api_confirmed_resolved": true,
+  "mocked": false
+}

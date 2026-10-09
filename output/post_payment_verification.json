@@ -1,0 +1,215 @@
+{
+  "/tickets": {
+    "tickets": [
+      {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "open",
+        "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      }
+    ],
+    "business_date": "2026-08-31"
+  },
+  "/cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160.0,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-08-31",
+    "currency": null
+  },
+  "/approvals": {
+    "payments": [
+      {
+        "id": "0f37d0f8-53f2-4581-a259-4f799c290ade",
+        "ticket_id": 101,
+        "kind": "invoice",
+        "ref_id": 501,
+        "amount": "840.0",
+        "account": "checking",
+        "due_date": "2026-08-28",
+        "requested_on": "2026-08-31",
+        "status": "executed",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-08-31",
+        "payment_id": 1,
+        "reason": "Human requested preparation for review only; no payment authorized."
+      },
+      {
+        "id": "e68b8e92-92b5-46c5-a27f-3f713d290d30",
+        "ticket_id": 102,
+        "kind": "rent",
+        "ref_id": 1,
+        "amount": "2400.0",
+        "account": "checking",
+        "due_date": "2026-09-02",
+        "requested_on": "2026-08-31",
+        "status": "executed",
+        "approved_by": "Dawon Kim",
+        "decision_on": "2026-08-31",
+        "payment_id": 2,
+        "reason": "Human requested preparation for review only; no payment authorized."
+      }
+    ],
+    "purchases": []
+  },
+  "/runs": {
+    "runs": [
+      {
+        "run_id": "382fce0f-a485-407a-bf3a-4b2b87411e02",
+        "ticket_id": 103,
+        "agent": "Boss",
+        "status": "failed",
+        "created_at_utc": "2026-10-09T05:31:11.172285+00:00",
+        "sequence": 662,
+        "task": "Investigate ticket 103. Follow the agreed plan and delegate to relevant specialists. For ticket 101, ask Accounting to prepare the linked unpaid invoice for human review; payment alone cannot prove stock receipt. For ticket 102, ask Facilities and Accounting to prepare recorded rent for review even before its due date. For ticket 103, report missing supplier and discount authority without guessing. Return evidence and blockers. Keep customer and vendor messages as unsent drafts.",
+        "prepare_payments": true,
+        "error": {
+          "type": "UsageLimitExceeded",
+          "message": "Inspect the recorded activity."
+        },
+        "database_reset_after_run": false
+      },
+      {
+        "run_id": "66a28ddf-4f5c-4e3e-bf7c-79cb0d3c130d",
+        "ticket_id": 103,
+        "agent": "Boss",
+        "status": "completed",
+        "created_at_utc": "2026-10-09T05:12:19.515475+00:00",
+        "sequence": 512,
+        "task": "Investigate ticket 103. Follow the agreed plan, delegate to relevant specialists, and return evidence and blockers. Prepare any needed requests for human review. Keep customer and vendor messages as unsent drafts.",
+        "prepare_payments": true,
+        "result": {
+          "ticket_id": 103,
+          "agent": "Boss",
+          "summary": "Investigated the bulk hoodie request. No quote or discount was prepared because the recorded data contains no discount policy or approval criteria. Fulfillment also cannot be confirmed: recorded stock is short of the requested quantity and supplier evidence is missing.",
+          "status": "blocked",
+          "evidence": [
+            "Accounting reports CC-HOOD-NAVY size M unit cost $22 and list price $58; discount policy/approval criteria are not recorded.",
+            "Inventory reports 8 available against 20 requested, a shortage of 12.",
+            "No supplier mapping or restock evidence is recorded; supplier identity and shipping status are unknown.",
+            "Ticket remains open; no quote, purchase, shipment, payment, or customer/vendor message was created."
+          ],
+          "uncertainties": [
+            "Whether a discount is authorized and at what price.",
+            "Whether 12 additional units can be sourced, and supplier/lead time.",
+            "Reservation semantics for the available 8 units."
+          ],
+          "approval_request_ids": [],
+          "next_actions": [
+            "Human to authorize a discount/price before a quote is prepared.",
+            "Human to confirm a supplier and provide evidence if the full 20 units must be supplied."
+          ]
+        },
+        "finished_at_utc": "2026-10-09T05:12:51.231007+00:00",
+        "database_reset_after_run": false
+      },
+      {
+        "run_id": "de013ccb-a656-48d7-9ec9-5d86ee01d389",
+        "ticket_id": 102,
+        "agent": "Boss",
+        "status": "completed",
+        "created_at_utc": "2026-10-09T05:11:08.664629+00:00",
+        "sequence": 435,
+        "task": "Investigate ticket 102. Follow the agreed plan, delegate to relevant specialists, and return evidence and blockers. Prepare any needed requests for human review. Keep customer and vendor messages as unsent drafts.",
+        "prepare_payments": true,
+        "result": {
+          "ticket_id": 102,
+          "agent": "Boss",
+          "summary": "Investigated the rent notice. Rent is $2,400 and due 2026-09-02, two days after the desk date (2026-08-31). No payment or approval request was made because rent is not yet due. The known checking balance exceeds the overdue $840 invoice plus upcoming rent by $160, but this is a narrow margin and does not account for other obligations or cash reservations. Ticket remains open; no resolution or customer/vendor message was made.",
+          "status": "awaiting_human",
+          "evidence": [
+            "Ticket 102 is open; requester Elm City Properties; notice says rent is due in two days.",
+            "Lease 1: monthly rent $2,400; next due 2026-09-02.",
+            "Desk date 2026-08-31; checking balance $3,400; open invoice #501 is $840 and overdue (due 2026-08-28); no payments listed.",
+            "Accounting assessed known obligations at $3,240 total, leaving $160 on recorded cash figures."
+          ],
+          "uncertainties": [
+            "Other obligations and cash reservations are unknown; currency/reservation semantics are unspecified.",
+            "Inventory and initial Accounting pricing delegation requests were rejected because the topics did not fit this rent ticket."
+          ],
+          "approval_request_ids": [],
+          "next_actions": [
+            "Human to decide payment priorities. If paying rent, when due verify current ticket/lease/cash state and prepare a rent approval request; payment requires human approval."
+          ]
+        },
+        "finished_at_utc": "2026-10-09T05:11:28.724499+00:00",
+        "database_reset_after_run": false
+      },
+      {
+        "run_id": "5cbf5332-10f2-485e-9056-468dc0b467f1",
+        "ticket_id": 101,
+        "agent": "Boss",
+        "status": "completed",
+        "created_at_utc": "2026-10-09T05:09:42.714268+00:00",
+        "sequence": 296,
+        "task": "Investigate ticket 101. Follow the agreed plan, delegate to relevant specialists, and return evidence and blockers. Prepare any needed requests for human review. Keep customer and vendor messages as unsent drafts.",
+        "prepare_payments": true,
+        "result": {
+          "ticket_id": 101,
+          "agent": "Boss",
+          "summary": "Investigated ticket 101. The requested tee cannot currently be fulfilled: size S stock is 0 for a requested quantity of 1. The recorded supplier\u2019s shipping is blocked by the open, unpaid invoice 501. No shipment, receipt, or fulfillment is recorded. Customer Service saved an unsent draft explaining the shortage and asking the customer\u2019s preference; no customer/vendor was contacted. No payment or purchase approval request was prepared because no payment decision was established. Ticket remains open.",
+          "status": "draft_ready",
+          "evidence": [
+            "Ticket status is open (MCP verification).",
+            "Inventory context: CC-TEE-WHITE size S, on hand 0; request qty 1.",
+            "Vendor 1, Bulldog Print Co, lead_days 5; Inventory reports shipping status disallowed while open unpaid invoice 501 ($840) remains. Earliest arrival is unknown; lead time is not shipment evidence.",
+            "Invoice 501 is open, due 2026-08-28, amount 840; checking balance 3,400. Accounting reports known rent obligation of 2,400 due 2026-09-02; known obligations leave 160 before other cash needs.",
+            "Unsent customer draft saved as e6097d5d-1088-457e-b30d-9eaf32772747. No shipment plans, purchases, payment approvals, or fulfillments recorded."
+          ],
+          "uncertainties": [
+            "Invoice has no structured line quantities or delivery date; it does not prove stock replenishment.",
+            "Currency/reservation semantics and any complete cash forecast are unspecified.",
+            "No confirmed restock/arrival date or customer deadline is available."
+          ],
+          "approval_request_ids": [],
+          "next_actions": [
+            "Human review the unsent customer draft and advise whether to send or how to proceed.",
+            "If supplier replenishment is desired, obtain a human payment decision for invoice 501; any payment requires approval and alone does not establish receipt.",
+            "After shipping is permitted, obtain actual supplier evidence, then verify received stock before fulfillment."
+          ]
+        },
+        "finished_at_utc": "2026-10-09T05:10:35.984608+00:00",
+        "database_reset_after_run": false
+      }
+    ],
+    "last_reset_sequence": 295
+  }
+}

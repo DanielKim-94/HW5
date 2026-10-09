@@ -1,0 +1,90 @@
+{
+  "original_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
+  "audit_prefix_preserved": true,
+  "pre_recovery_audit_entries": 1488,
+  "current_audit_entries": 1491,
+  "tickets": [
+    {
+      "id": 101,
+      "type": "customer_order",
+      "requester": "Tauhid Zaman",
+      "subject": "Bulldog tee",
+      "sku": "CC-TEE-WHITE",
+      "size": "S",
+      "qty": 1,
+      "lease_id": null,
+      "invoice_id": 501,
+      "status": "resolved",
+      "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+      "created_at": "2026-08-31T09:15:00-04:00"
+    },
+    {
+      "id": 102,
+      "type": "rent_notice",
+      "requester": "Elm City Properties",
+      "subject": "Rent due",
+      "sku": null,
+      "size": null,
+      "qty": null,
+      "lease_id": 1,
+      "invoice_id": null,
+      "status": "resolved",
+      "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+      "created_at": "2026-08-31T11:05:00-04:00"
+    },
+    {
+      "id": 103,
+      "type": "price_override",
+      "requester": "Yale AI Club",
+      "subject": "Bulk hoodie discount",
+      "sku": "CC-HOOD-NAVY",
+      "size": "M",
+      "qty": 20,
+      "lease_id": null,
+      "invoice_id": null,
+      "status": "resolved",
+      "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.\nHuman business decision: price 58.00 retained; unsent conditional quote prepared. Resolution criterion not applied.\nHuman-authorized pricing decision recorded as unsent conditional quote; no fulfillment, customer acceptance or revenue claimed.",
+      "created_at": "2026-08-31T16:55:00-04:00"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "kind": "invoice",
+      "ref_id": 501,
+      "amount": 840.0,
+      "account": "checking",
+      "paid_at": "2026-08-31",
+      "approved_by": "Dawon Kim"
+    },
+    {
+      "id": 2,
+      "kind": "rent",
+      "ref_id": 1,
+      "amount": 2400.0,
+      "account": "checking",
+      "paid_at": "2026-08-31",
+      "approved_by": "Dawon Kim"
+    }
+  ],
+  "fulfillments": [
+    {
+      "ticket_id": 101,
+      "sku": "CC-TEE-WHITE",
+      "size": "S",
+      "qty": 1,
+      "fulfilled_on": "2026-09-05"
+    }
+  ],
+  "cash_accounts": [
+    {
+      "name": "checking",
+      "balance": 160.0,
+      "date": "2026-08-31"
+    }
+  ],
+  "runtime": {
+    "working_database_path": "C:\\Users\\1dank\\OneDrive\\\ubc14\ud0d5 \ud654\uba74\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+    "mcp_pid": 49800
+  }
+}

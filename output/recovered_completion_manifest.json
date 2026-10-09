@@ -1,0 +1,160 @@
+{
+  "batch_id": "recovered-20261009T072943Z",
+  "kind": "Scoped recovery of previously committed user-authorized completion, not a new simulation or agent run",
+  "original_completion_manifest": "resolution_completion_manifest.json",
+  "after_reset_sequence": 1472,
+  "source_completion_audit_sequences": [
+    1348,
+    1350
+  ],
+  "ticket_statuses": {
+    "101": "resolved",
+    "102": "resolved",
+    "103": "resolved"
+  },
+  "checking": 160,
+  "runtime": {
+    "working_database_path": "C:\\Users\\1dank\\OneDrive\\바탕 화면\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+    "mcp_pid": 49800
+  },
+  "resolved_screenshots": {
+    "101": {
+      "path": "output/screenshots/recovered-20261009T072943Z_ticket_101_resolved.png",
+      "ticket_id": 101,
+      "captured_utc": "2026-10-09T07:36:31.471Z",
+      "ticket": {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "resolved",
+        "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      "cash": {
+        "account": {
+          "name": "checking",
+          "balance": 160,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-09-05",
+        "currency": null
+      },
+      "completion_batch": "recovered-20261009T072943Z",
+      "instructor_confirmed": false,
+      "simulation_disclosure": [
+        "Paid invoice501 covers one ticket-requested tee",
+        "Five calendar days from shop payment date2026-08-31; simulated fulfillment2026-09-05",
+        "Classroom simulation only; no physical delivery claimed"
+      ],
+      "screenshot_sha256": "af9b6048739a3cbd74ffe6b34f3ddff705a9ae042abd76a79ff9d51d40e22907",
+      "dashboard_url": "http://localhost:5174/",
+      "visible_browser": true,
+      "visible_current_outcome": "Current outcome: Resolved: database confirmed\nSimulated receipt and fulfillment are recorded. No physical delivery claimed.\n\nNext action: None. Keep the evidence; do not repeat payments or completion actions.",
+      "running_backend_identity": {
+        "working_database_path": "C:\\Users\\1dank\\OneDrive\\바탕 화면\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+        "mcp_pid": 49800
+      },
+      "database_reset_sequence": 1472,
+      "api_confirmed_resolved": true,
+      "mocked": false
+    },
+    "102": {
+      "path": "output/screenshots/recovered-20261009T072943Z_ticket_102_resolved.png",
+      "ticket_id": 102,
+      "captured_utc": "2026-10-09T07:36:33.687Z",
+      "ticket": {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      "cash": {
+        "account": {
+          "name": "checking",
+          "balance": 160,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-09-05",
+        "currency": null
+      },
+      "completion_batch": "recovered-20261009T072943Z",
+      "instructor_confirmed": false,
+      "simulation_disclosure": null,
+      "screenshot_sha256": "ff56d413bd73cc31f88ccc25b858868ebd3da229270774c395b01999715603d2",
+      "dashboard_url": "http://localhost:5174/",
+      "visible_browser": true,
+      "visible_current_outcome": "Current outcome: Resolved: database confirmed\nApproved rent payment recorded.\n\nNext action: None. Keep the evidence; do not repeat payments or completion actions.",
+      "running_backend_identity": {
+        "working_database_path": "C:\\Users\\1dank\\OneDrive\\바탕 화면\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+        "mcp_pid": 49800
+      },
+      "database_reset_sequence": 1472,
+      "api_confirmed_resolved": true,
+      "mocked": false
+    },
+    "103": {
+      "path": "output/screenshots/recovered-20261009T072943Z_ticket_103_resolved.png",
+      "ticket_id": 103,
+      "captured_utc": "2026-10-09T07:36:36.133Z",
+      "ticket": {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "resolved",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.\nHuman business decision: price 58.00 retained; unsent conditional quote prepared. Resolution criterion not applied.\nHuman-authorized pricing decision recorded as unsent conditional quote; no fulfillment, customer acceptance or revenue claimed.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      },
+      "cash": {
+        "account": {
+          "name": "checking",
+          "balance": 160,
+          "date": "2026-08-31"
+        },
+        "business_date": "2026-09-05",
+        "currency": null
+      },
+      "completion_batch": "recovered-20261009T072943Z",
+      "instructor_confirmed": false,
+      "simulation_disclosure": null,
+      "screenshot_sha256": "e71bf7e73390462a3652d64a51e08c5193c38fd56f5ffb757a6b658d1f43227c",
+      "dashboard_url": "http://localhost:5174/",
+      "visible_browser": true,
+      "visible_current_outcome": "Current outcome: Resolved: database confirmed\nPricing request closed; the quote is unsent and conditional. No hoodie fulfillment or revenue.\n\nNext action: None. Keep the evidence; do not repeat payments or completion actions.",
+      "running_backend_identity": {
+        "working_database_path": "C:\\Users\\1dank\\OneDrive\\바탕 화면\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+        "mcp_pid": 49800
+      },
+      "database_reset_sequence": 1472,
+      "api_confirmed_resolved": true,
+      "mocked": false
+    }
+  },
+  "instructor_confirmed": false,
+  "simulation_assumptions": [
+    "Paid invoice501 covers one ticket-requested tee",
+    "Five calendar days from shop payment date2026-08-31; simulated fulfillment2026-09-05",
+    "Classroom simulation only; no physical delivery claimed"
+  ],
+  "simulation_repeated": false,
+  "payments_repeated": false
+}

@@ -1,0 +1,936 @@
+{
+  "source": "original database, actual MCP reads, supplied user prompts and approved Problem 6 plan",
+  "original_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
+  "supplied_zip_entries": [
+    "data/campus_customs.db"
+  ],
+  "separate_assignment_handout_found": false,
+  "assignment_material_limit": "No separate HW5 PDF, DOCX, notebook, syllabus, or handout found in HW5 or searched workspace; cannot verify materials not supplied.",
+  "original": {
+    "schema": [
+      {
+        "name": "desk",
+        "sql": "CREATE TABLE desk (\n            date_today TEXT NOT NULL,\n            notes TEXT\n        )"
+      },
+      {
+        "name": "inventory",
+        "sql": "CREATE TABLE inventory (\n            sku TEXT NOT NULL,\n            name TEXT NOT NULL,\n            size TEXT NOT NULL,\n            qty INTEGER NOT NULL,\n            location TEXT NOT NULL,\n            PRIMARY KEY (sku, size)\n        )"
+      },
+      {
+        "name": "pricing",
+        "sql": "CREATE TABLE pricing (\n            sku TEXT PRIMARY KEY,\n            unit_cost REAL NOT NULL,\n            list_price REAL NOT NULL\n        )"
+      },
+      {
+        "name": "vendors",
+        "sql": "CREATE TABLE vendors (\n            id INTEGER PRIMARY KEY,\n            name TEXT NOT NULL,\n            specialty TEXT NOT NULL,\n            lead_days INTEGER NOT NULL\n        )"
+      },
+      {
+        "name": "leases",
+        "sql": "CREATE TABLE leases (\n            id INTEGER PRIMARY KEY,\n            space_name TEXT NOT NULL,\n            landlord TEXT NOT NULL,\n            monthly_rent REAL NOT NULL,\n            next_due TEXT NOT NULL,\n            notes TEXT\n        )"
+      },
+      {
+        "name": "cash_accounts",
+        "sql": "CREATE TABLE cash_accounts (\n            name TEXT PRIMARY KEY,\n            balance REAL NOT NULL,\n            date TEXT NOT NULL\n        )"
+      },
+      {
+        "name": "payments",
+        "sql": "CREATE TABLE payments (\n            id INTEGER PRIMARY KEY,\n            kind TEXT NOT NULL,\n            ref_id INTEGER,\n            amount REAL NOT NULL,\n            account TEXT NOT NULL,\n            paid_at TEXT NOT NULL,\n            approved_by TEXT NOT NULL\n        )"
+      },
+      {
+        "name": "invoices",
+        "sql": "CREATE TABLE invoices (\n            id INTEGER PRIMARY KEY,\n            vendor_id INTEGER NOT NULL,\n            amount REAL NOT NULL,\n            due_date TEXT NOT NULL,\n            status TEXT NOT NULL,\n            description TEXT,\n            FOREIGN KEY (vendor_id) REFERENCES vendors(id)\n        )"
+      },
+      {
+        "name": "tickets",
+        "sql": "CREATE TABLE tickets (\n            id INTEGER PRIMARY KEY,\n            type TEXT NOT NULL,\n            requester TEXT NOT NULL,\n            subject TEXT NOT NULL,\n            sku TEXT,\n            size TEXT,\n            qty INTEGER,\n            lease_id INTEGER,\n            invoice_id INTEGER,\n            status TEXT NOT NULL,\n            notes TEXT,\n            created_at TEXT NOT NULL,\n            FOREIGN KEY (lease_id) REFERENCES leases(id),\n            FOREIGN KEY (invoice_id) REFERENCES invoices(id)\n        )"
+      }
+    ],
+    "rows": {
+      "desk": [
+        {
+          "date_today": "2026-08-31",
+          "notes": null
+        }
+      ],
+      "inventory": [
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "S",
+          "qty": 4,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "M",
+          "qty": 8,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "L",
+          "qty": 14,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "XL",
+          "qty": 6,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-TEE-WHITE",
+          "name": "Classic Bulldog Tee",
+          "size": "S",
+          "qty": 0,
+          "location": "Aisle B"
+        },
+        {
+          "sku": "CC-TEE-WHITE",
+          "name": "Classic Bulldog Tee",
+          "size": "M",
+          "qty": 5,
+          "location": "Aisle B"
+        },
+        {
+          "sku": "CC-TEE-WHITE",
+          "name": "Classic Bulldog Tee",
+          "size": "L",
+          "qty": 3,
+          "location": "Aisle B"
+        },
+        {
+          "sku": "CC-TEE-WHITE",
+          "name": "Classic Bulldog Tee",
+          "size": "XL",
+          "qty": 2,
+          "location": "Aisle B"
+        },
+        {
+          "sku": "CC-HAT-BLUE",
+          "name": "Yale Cap",
+          "size": "OS",
+          "qty": 40,
+          "location": "Aisle C"
+        },
+        {
+          "sku": "CC-MUG-CREST",
+          "name": "Crest Mug",
+          "size": "OS",
+          "qty": 0,
+          "location": "Aisle D"
+        }
+      ],
+      "pricing": [
+        {
+          "sku": "CC-HOOD-NAVY",
+          "unit_cost": 22.0,
+          "list_price": 58.0
+        },
+        {
+          "sku": "CC-TEE-WHITE",
+          "unit_cost": 8.0,
+          "list_price": 28.0
+        },
+        {
+          "sku": "CC-HAT-BLUE",
+          "unit_cost": 6.0,
+          "list_price": 22.0
+        },
+        {
+          "sku": "CC-MUG-CREST",
+          "unit_cost": 3.5,
+          "list_price": 14.0
+        }
+      ],
+      "vendors": [
+        {
+          "id": 1,
+          "name": "Bulldog Print Co",
+          "specialty": "apparel reprint",
+          "lead_days": 5
+        },
+        {
+          "id": 2,
+          "name": "Elm City Gifts",
+          "specialty": "mugs and small goods",
+          "lead_days": 3
+        },
+        {
+          "id": 3,
+          "name": "QuickShip CT",
+          "specialty": "local courier",
+          "lead_days": 1
+        }
+      ],
+      "leases": [
+        {
+          "id": 1,
+          "space_name": "Chapel Street shop",
+          "landlord": "Elm City Properties",
+          "monthly_rent": 2400.0,
+          "next_due": "2026-09-02",
+          "notes": null
+        }
+      ],
+      "cash_accounts": [
+        {
+          "name": "checking",
+          "balance": 3400.0,
+          "date": "2026-08-31"
+        }
+      ],
+      "payments": [],
+      "invoices": [
+        {
+          "id": 501,
+          "vendor_id": 1,
+          "amount": 840.0,
+          "due_date": "2026-08-28",
+          "status": "open",
+          "description": "Rush reprint CC-TEE-WHITE S"
+        }
+      ],
+      "tickets": [
+        {
+          "id": 101,
+          "type": "customer_order",
+          "requester": "Tauhid Zaman",
+          "subject": "Bulldog tee",
+          "sku": "CC-TEE-WHITE",
+          "size": "S",
+          "qty": 1,
+          "lease_id": null,
+          "invoice_id": 501,
+          "status": "open",
+          "notes": "Needs a tee in size S.",
+          "created_at": "2026-08-31T09:15:00-04:00"
+        },
+        {
+          "id": 102,
+          "type": "rent_notice",
+          "requester": "Elm City Properties",
+          "subject": "Rent due",
+          "sku": null,
+          "size": null,
+          "qty": null,
+          "lease_id": 1,
+          "invoice_id": null,
+          "status": "open",
+          "notes": "Email: shop rent due in 2 days.",
+          "created_at": "2026-08-31T11:05:00-04:00"
+        },
+        {
+          "id": 103,
+          "type": "price_override",
+          "requester": "Yale AI Club",
+          "subject": "Bulk hoodie discount",
+          "sku": "CC-HOOD-NAVY",
+          "size": "M",
+          "qty": 20,
+          "lease_id": null,
+          "invoice_id": null,
+          "status": "open",
+          "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+          "created_at": "2026-08-31T16:55:00-04:00"
+        }
+      ]
+    }
+  },
+  "working_contexts": {
+    "101": {
+      "ticket": {
+        "id": 101,
+        "type": "customer_order",
+        "requester": "Tauhid Zaman",
+        "subject": "Bulldog tee",
+        "sku": "CC-TEE-WHITE",
+        "size": "S",
+        "qty": 1,
+        "lease_id": null,
+        "invoice_id": 501,
+        "status": "open",
+        "notes": "Needs a tee in size S.",
+        "created_at": "2026-08-31T09:15:00-04:00"
+      },
+      "inventory": {
+        "sku": "CC-TEE-WHITE",
+        "name": "Classic Bulldog Tee",
+        "size": "S",
+        "qty": 0,
+        "location": "Aisle B"
+      },
+      "pricing": {
+        "sku": "CC-TEE-WHITE",
+        "unit_cost": 8.0,
+        "list_price": 28.0
+      },
+      "invoice": {
+        "id": 501,
+        "vendor_id": 1,
+        "amount": 840.0,
+        "due_date": "2026-08-28",
+        "status": "open",
+        "description": "Rush reprint CC-TEE-WHITE S"
+      },
+      "vendor": {
+        "id": 1,
+        "name": "Bulldog Print Co",
+        "specialty": "apparel reprint",
+        "lead_days": 5
+      },
+      "desk": [
+        {
+          "date_today": "2026-08-31",
+          "notes": null
+        }
+      ],
+      "cash_accounts": [
+        {
+          "name": "checking",
+          "balance": 3400.0,
+          "date": "2026-08-31"
+        }
+      ],
+      "uncertainties": [
+        "SKU/size matches are not declared foreign keys.",
+        "The invoice has no structured line quantities or delivery date.",
+        "Payment does not establish a replenishment or fulfillment rule.",
+        "Currency and stock-reservation semantics are unspecified."
+      ]
+    },
+    "102": {
+      "ticket": {
+        "id": 102,
+        "type": "rent_notice",
+        "requester": "Elm City Properties",
+        "subject": "Rent due",
+        "sku": null,
+        "size": null,
+        "qty": null,
+        "lease_id": 1,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Email: shop rent due in 2 days.",
+        "created_at": "2026-08-31T11:05:00-04:00"
+      },
+      "lease": {
+        "id": 1,
+        "space_name": "Chapel Street shop",
+        "landlord": "Elm City Properties",
+        "monthly_rent": 2400.0,
+        "next_due": "2026-09-02",
+        "notes": null
+      },
+      "desk": [
+        {
+          "date_today": "2026-08-31",
+          "notes": null
+        }
+      ],
+      "cash_accounts": [
+        {
+          "name": "checking",
+          "balance": 3400.0,
+          "date": "2026-08-31"
+        }
+      ],
+      "open_invoices": [
+        {
+          "id": 501,
+          "vendor_id": 1,
+          "amount": 840.0,
+          "due_date": "2026-08-28",
+          "status": "open",
+          "description": "Rush reprint CC-TEE-WHITE S"
+        }
+      ],
+      "payments": [],
+      "uncertainties": [
+        "Payment kind/ref_id and account relationships are not defined by foreign keys.",
+        "Returned payments are unfiltered; operational tools use kind invoice/rent with the corresponding record ID.",
+        "Currency and available/reserved cash semantics are unspecified; every payment requires human approval.",
+        "Open invoices do not necessarily represent every cash obligation."
+      ]
+    },
+    "103": {
+      "ticket": {
+        "id": 103,
+        "type": "price_override",
+        "requester": "Yale AI Club",
+        "subject": "Bulk hoodie discount",
+        "sku": "CC-HOOD-NAVY",
+        "size": "M",
+        "qty": 20,
+        "lease_id": null,
+        "invoice_id": null,
+        "status": "open",
+        "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+        "created_at": "2026-08-31T16:55:00-04:00"
+      },
+      "inventory": {
+        "sku": "CC-HOOD-NAVY",
+        "name": "Basic Hoodie Big Yale",
+        "size": "M",
+        "qty": 8,
+        "location": "Aisle A"
+      },
+      "inventory_all_sizes": [
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "L",
+          "qty": 14,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "M",
+          "qty": 8,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "S",
+          "qty": 4,
+          "location": "Aisle A"
+        },
+        {
+          "sku": "CC-HOOD-NAVY",
+          "name": "Basic Hoodie Big Yale",
+          "size": "XL",
+          "qty": 6,
+          "location": "Aisle A"
+        }
+      ],
+      "pricing": {
+        "sku": "CC-HOOD-NAVY",
+        "unit_cost": 22.0,
+        "list_price": 58.0
+      },
+      "uncertainties": [
+        "SKU/size matches are not declared foreign keys.",
+        "No discount amount, minimum margin, approval policy, or customer deadline is stored.",
+        "No structured SKU-to-vendor mapping or restock commitment is stored.",
+        "Currency and stock-reservation semantics are unspecified."
+      ]
+    }
+  },
+  "mcp_tools": [
+    {
+      "name": "get_customer_order_context",
+      "description": "Read a customer-order ticket, exact-size stock, pricing, linked invoice/vendor,\nbusiness date, and cash. Missing linked rows return null. Does not fulfill orders.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "default": 101,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_rent_payment_context",
+      "description": "Read a rent-notice ticket, linked lease, business date, accounts, all open\ninvoices, and all recorded payments. Payments are unfiltered because their\noriginal kind/ref_id schema has no foreign keys. New payments use the\ndocumented invoice/rent convention. Does not pay rent or approve spending.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "default": 102,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bulk_pricing_context",
+      "description": "Read a price-override ticket, exact-size stock, all stock sizes for its SKU,\nand recorded unit cost/list price. Other sizes are context, not substitutes.\nDoes not approve discounts, change pricing, or reserve inventory.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "default": 103,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "name": "initialize_shop_tools",
+      "description": "Human/backend setup only. Add operational tables to the working copy.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "human_capability": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "human_capability"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ticket_context",
+      "description": "Read the ticket, shop date, and any operational records for this ticket.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticket_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_vendor_shipping_status",
+      "description": "Read a vendor and all its open invoices. Shipping is blocked by any open bill.\nA lead time is not a confirmed arrival; supplier/SKU mapping remains unspecified.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "vendor_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "vendor_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "request_payment_approval",
+      "description": "Create a pending human request for the database obligation amount, never pay.\nRefuse insufficient cash. Repeated requests for the same obligation are reused.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "invoice",
+              "rent"
+            ],
+            "type": "string"
+          },
+          "ref_id": {
+            "type": "integer"
+          },
+          "account": {
+            "default": "checking",
+            "type": "string"
+          },
+          "reason": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "kind",
+          "ref_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_payment_approval",
+      "description": "Read the stored payment request for this ticket, including human decision.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "approval_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "approval_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "record_human_payment_decision",
+      "description": "Human/backend only, never an agent tool. Decide a pending payment request.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "approval_id": {
+            "type": "string"
+          },
+          "approve": {
+            "type": "boolean"
+          },
+          "human_name": {
+            "type": "string"
+          },
+          "human_capability": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "approval_id",
+          "approve",
+          "human_name",
+          "human_capability"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "execute_approved_payment",
+      "description": "Execute only a stored human-approved payment; atomic and replay-safe.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "approval_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "approval_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "save_message_draft",
+      "description": "Store an unsent customer/vendor message draft. No communication is sent.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "recipient": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "recipient",
+          "body"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "save_quote_draft",
+      "description": "Store a ticket-specific unsent quote at or above recorded cost. No approval,\nglobal price change, revenue, or stock reservation is implied.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "unit_price": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "unit_price",
+          "rationale"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "plan_vendor_shipment",
+      "description": "Store a shipment DRAFT using vendor lead_days only when no open invoice exists.\nRequires supplied evidence for the SKU/vendor match. Never ship or add stock.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "vendor_id": {
+            "type": "integer"
+          },
+          "qty": {
+            "type": "integer"
+          },
+          "supplier_evidence": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "vendor_id",
+          "qty",
+          "supplier_evidence"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "fulfill_customer_order",
+      "description": "Fulfill a customer_order from actual exact-size stock; atomically decrement\ninventory and resolve ticket. Idempotent, no revenue or imagined restock.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticket_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_shop_tickets",
+      "description": "Read the three assignment tickets and their current stored statuses.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_checking_balance",
+      "description": "Read the actual checking account; no currency is inferred.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_cash_obligations",
+      "description": "Read cash, open invoices, leases, payments and shop date without switching tickets.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticket_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_approval_requests",
+      "description": "Read durable payment/purchase requests, including executed and denied ones.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "name": "approve_and_execute_payment",
+      "description": "Human-only: grant a pending payment and execute in ONE transaction.\nInsufficient cash/stale obligations roll back the decision as well as payment.\nAn already-executed request returns its original payment without charging again.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "approval_id": {
+            "type": "string"
+          },
+          "human_name": {
+            "type": "string"
+          },
+          "human_capability": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "approval_id",
+          "human_name",
+          "human_capability"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "request_purchase_approval",
+      "description": "Prepare a purchase for the ticket's exact product/size at recorded unit cost.\nRequire supplied supplier evidence. Never debit cash or invent received stock.\nOnly one pending/executed purchase per ticket; shipping block rechecked at approval.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "vendor_id": {
+            "type": "integer"
+          },
+          "qty": {
+            "type": "integer"
+          },
+          "supplier_evidence": {
+            "type": "string"
+          },
+          "account": {
+            "default": "checking",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "vendor_id",
+          "qty",
+          "supplier_evidence"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "approve_and_execute_purchase",
+      "description": "Human-only: atomically approve and record a prepared cash-out purchase.\nRecheck price/product/shortage/lead time, vendor unpaid bills, and available cash.\nNever add stock or contact a vendor; repeated approval is idempotent.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "approval_id": {
+            "type": "string"
+          },
+          "human_name": {
+            "type": "string"
+          },
+          "human_capability": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "approval_id",
+          "human_name",
+          "human_capability"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "deny_prepared_request",
+      "description": "Human-only denial of an unexecuted request; no spending.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ticket_id": {
+            "type": "integer"
+          },
+          "approval_id": {
+            "type": "string"
+          },
+          "request_type": {
+            "enum": [
+              "payment",
+              "purchase"
+            ],
+            "type": "string"
+          },
+          "human_name": {
+            "type": "string"
+          },
+          "human_capability": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "approval_id",
+          "request_type",
+          "human_name",
+          "human_capability"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "reset_working_database",
+      "description": "Human-only reset via SQLite backup from original into the fixed working DB.\nRecreate empty operational schema. Audit files remain untouched; original read-only.",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "human_capability": {
+            "type": "string"
+          },
+          "confirmation": {
+            "const": "RESET_WORKING_DATABASE",
+            "type": "string"
+          }
+        },
+        "required": [
+          "human_capability",
+          "confirmation"
+        ],
+        "type": "object"
+      }
+    }
+  ],
+  "missing_101": [
+    "Confirmed receipt record identifying SKU, size, quantity, date, and actual source evidence",
+    "Receipt/replenishment MCP tool; invoice describes reprint but has no structured quantity",
+    "Actual exact-size stock sufficient for 1 unit"
+  ],
+  "missing_103": [
+    "Requested or authorized discount/unit price",
+    "Discount approval authority/policy or explicit human decision",
+    "Price-override approval and resolution tool/workflow",
+    "Verified supplier/receipt if physical fulfillment of 20 size-M units is intended"
+  ],
+  "can_resolve_now": {
+    "101": false,
+    "102": "Only after human-approved recorded rent payment",
+    "103": false
+  }
+}

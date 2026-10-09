@@ -1,0 +1,46 @@
+{
+  "path": "output/screenshots/recovered-20261009T072943Z_ticket_101_resolved.png",
+  "ticket_id": 101,
+  "captured_utc": "2026-10-09T07:36:31.471Z",
+  "ticket": {
+    "id": 101,
+    "type": "customer_order",
+    "requester": "Tauhid Zaman",
+    "subject": "Bulldog tee",
+    "sku": "CC-TEE-WHITE",
+    "size": "S",
+    "qty": 1,
+    "lease_id": null,
+    "invoice_id": 501,
+    "status": "resolved",
+    "notes": "Needs a tee in size S.\nInvoice payment 1 recorded; fulfillment remains separate.\nSIMULATION ONLY: human-confirmed classroom receipt and fulfillment; no physical delivery claimed.",
+    "created_at": "2026-08-31T09:15:00-04:00"
+  },
+  "cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-09-05",
+    "currency": null
+  },
+  "completion_batch": "recovered-20261009T072943Z",
+  "instructor_confirmed": false,
+  "simulation_disclosure": [
+    "Paid invoice501 covers one ticket-requested tee",
+    "Five calendar days from shop payment date2026-08-31; simulated fulfillment2026-09-05",
+    "Classroom simulation only; no physical delivery claimed"
+  ],
+  "screenshot_sha256": "af9b6048739a3cbd74ffe6b34f3ddff705a9ae042abd76a79ff9d51d40e22907",
+  "dashboard_url": "http://localhost:5174/",
+  "visible_browser": true,
+  "visible_current_outcome": "Current outcome: Resolved: database confirmed\nSimulated receipt and fulfillment are recorded. No physical delivery claimed.\n\nNext action: None. Keep the evidence; do not repeat payments or completion actions.",
+  "running_backend_identity": {
+    "working_database_path": "C:\\Users\\1dank\\OneDrive\\바탕 화면\\AI Foundations Homework\\HW 5\\data\\campus_customs_new.db",
+    "mcp_pid": 49800
+  },
+  "database_reset_sequence": 1472,
+  "api_confirmed_resolved": true,
+  "mocked": false
+}

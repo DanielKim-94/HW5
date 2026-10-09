@@ -1,0 +1,78 @@
+{
+  "checked_utc": "2026-10-09T04:29:28.491285+00:00",
+  "configured_model": "gpt-6-luna",
+  "agent_models": {
+    "Boss": "gpt-6-luna",
+    "Inventory": "gpt-6-luna",
+    "Accounting": "gpt-6-luna",
+    "Facilities": "gpt-6-luna",
+    "Customer Service": "gpt-6-luna"
+  },
+  "metadata": [
+    {
+      "event": "model_http_requested",
+      "data": {
+        "endpoint": "https://api.portkey.ai/v1/chat/completions",
+        "model": "gpt-6-luna",
+        "reasoning_effort": "none",
+        "max_completion_tokens": 256,
+        "tool_names": [
+          "final_result"
+        ],
+        "routing_config_header_present": false
+      }
+    },
+    {
+      "event": "model_http_response",
+      "data": {
+        "http_status": 200,
+        "requested": "gpt-6-luna",
+        "reported": "gpt-6-luna-2026-09-22",
+        "response_id": "chatcmpl-EWwWW4T0P81zYcv8ImdR0sTlDa2aZ",
+        "usage": {
+          "completion_tokens": 17,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 4,
+            "engine_ttft_ms": 72,
+            "engine_ttlt_ms": 142,
+            "pre_inference_ms": 110,
+            "service_tbt_ms": 4,
+            "service_ttft_ms": 335,
+            "service_ttlt_ms": 399,
+            "user_visible_ttft_ms": 224
+          },
+          "prompt_tokens": 140,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 157
+        },
+        "headers": {
+          "x-portkey-cache-status": "MISS",
+          "x-portkey-last-used-option-index": "config.targets[2]",
+          "x-portkey-provider": "azure-openai",
+          "x-portkey-retry-attempt-count": "0",
+          "x-portkey-trace-id": "07c96612-8384-42c5-9057-e4de52d0982d",
+          "x-request-id": "a88ede89-46c1-4f52-8eb2-62192489a0cd"
+        },
+        "model_matches": true
+      }
+    }
+  ],
+  "output": {
+    "marker": "verified"
+  },
+  "reported_models": [
+    "gpt-6-luna-2026-09-22"
+  ],
+  "verified": true,
+  "shop_operations": false
+}

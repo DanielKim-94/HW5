@@ -1,0 +1,35 @@
+{
+  "path": "output/screenshots/resolution-20261009T065959Z_ticket_102_resolved.png",
+  "ticket_id": 102,
+  "captured_utc": "2026-10-09T07:02:58.945Z",
+  "ticket": {
+    "id": 102,
+    "type": "rent_notice",
+    "requester": "Elm City Properties",
+    "subject": "Rent due",
+    "sku": null,
+    "size": null,
+    "qty": null,
+    "lease_id": 1,
+    "invoice_id": null,
+    "status": "resolved",
+    "notes": "Email: shop rent due in 2 days.\nRent payment 2 recorded with human approval.",
+    "created_at": "2026-08-31T11:05:00-04:00"
+  },
+  "cash": {
+    "account": {
+      "name": "checking",
+      "balance": 160,
+      "date": "2026-08-31"
+    },
+    "business_date": "2026-09-05",
+    "currency": null
+  },
+  "completion_batch": "resolution-20261009T065959Z",
+  "instructor_confirmed": false,
+  "simulation_disclosure": null,
+  "screenshot_sha256": "e11b967c4f7b2f35a9e6fbfb79e707902d57dd4db8a3e7fe553a85938a3e2d86",
+  "dashboard_url": "http://localhost:5174/",
+  "api_confirmed_resolved": true,
+  "mocked": false
+}
