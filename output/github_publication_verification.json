@@ -1,0 +1,128 @@
+{
+  "repository_url": "https://github.com/DanielKim-94/HW5",
+  "public_verified_without_authentication": true,
+  "verified_commit": "d24edadce58e1617c64b1cfc4642bae2a84cf514",
+  "remote_required_files": {
+    "AI_prompts.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "README.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "requirements.txt": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    ".env.example": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    ".gitignore": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    ".mcp.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "data/campus_customs.db": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true,
+      "download_sha256": "23686a90d698f7fa6f901a3f0a9774db9cbb31e13151c9e5717275f3321f360a",
+      "download_matches_local": true
+    },
+    "data/campus_customs_new.db": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true,
+      "download_sha256": "91ac4446611174810c1060c4a06ffdaf47c5e19ae51b783c48fd555c2e1574f9",
+      "download_matches_local": true
+    },
+    "backend/main.py": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "backend/models.py": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "mcp_server/server.py": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "mcp_server/READme.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "frontend/package.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "frontend/package-lock.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/harness.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/mcp_smoke.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/audit_trail.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/desk_tickets.html": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/design.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/resolved_tickets.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/payment_reconciliation.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/recovered_completion_manifest.json": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "backend/prompts/boss.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "backend/prompts/inventory.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "backend/prompts/accounting.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "backend/prompts/facilities.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "backend/prompts/customer_service.md": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true
+    },
+    "output/github_url.txt": {
+      "uploaded": true,
+      "remote_blob_matches_commit": true,
+      "downloaded_url_matches": true
+    }
+  },
+  "remote_total_files": 108,
+  "excluded_secrets_and_generated_paths_absent": true,
+  "secret_scan": "Staged contents and prior history passed known-local-secret and common key-signature scans",
+  "both_databases_download_match": true
+}

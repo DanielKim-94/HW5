@@ -60,5 +60,5 @@
     "secret_scan": "No known local secret values or common GitHub/OpenAI key signatures found in staged files",
     "database_and_audit_unchanged_by_preparation": true
   },
-  "publication": "Repository selected; pending push and remote verification"
+  "publication": "Published to public GitHub; required files verified against remote Git blobs and both databases downloaded and matched byte-for-byte. See github_publication_verification.json."
 }

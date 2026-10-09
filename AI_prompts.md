@@ -310,7 +310,7 @@ Check that the README explains how to reset the working database, start the MCP 
 Once the project is ready, help me publish it to the public GitHub repository I specify and save its URL in `output/github_url.txt`. Give me the repository link so I can submit it to Canvas myself.
 ```
 
-Preparation checks and documentation fixes are recorded in output/submission_review.json. Publishing and github_url.txt remain pending the user-specified repository; no URL or successful push is invented.
+Preparation checks and documentation fixes are recorded in output/submission_review.json. At preparation time, publishing and github_url.txt were pending repository selection. The follow-up below supplies the destination; publication was completed and verified.
 
 
 
@@ -321,3 +321,5 @@ Please publish the committed project to [https://github.com/DanielKim-94/HW5](ht
 ```
 
 The earlier preparation lacked a repository destination. This follow-up authorizes publication to the specified public repository and verification of remote artifacts.
+
+Publication result: https://github.com/DanielKim-94/HW5 is public. output/github_url.txt was pushed; all 28 required files were verified remotely, both database downloads matched local bytes, and excluded credential paths were absent. Detailed evidence: output/github_publication_verification.json.
